@@ -1,0 +1,27 @@
+.toggleSwitch {
+    width: 110px;
+    border-radius: 38px;
+    padding: 14px;
+    display: flex;
+    cursor: pointer;
+    background-color: #28282850;
+
+}
+
+/* CSS for switch when "on"*/
+.toggleSwitch.on {
+    justify-content: flex-end;
+    /* for smooth transition*/
+}
+
+
+/*CSS for switch when "off"*/
+.toggleSwitch.off {
+    justify-content: flex-start;
+}
+
+
+
+.rightToggle {
+    transition: ease-in-out 0.6s;
+}

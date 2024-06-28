@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export const SlideTabsExample = () => {
+export const SliderTab = () => {
   const [currentPosition, setCurrentPosition] = useState({
     left: 0,
     width: 0,
