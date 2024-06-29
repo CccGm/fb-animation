@@ -17,24 +17,24 @@ import img14 from "../../assets/images/page7/Rectangle 146.png";
 import img15 from "../../assets/images/page7/Rectangle 147.png";
 
 export const Frame7 = () => (
-  <div className="w-full bg-black h-screen">
+  <div className="w-full bg-black min-h-screen">
     <InfiniteLooper speed="20" direction="left">
       <div className="flex gap-3 contentBlock--one">
-        <img src={img1} alt="scroll picture" />
-        <img src={img2} alt="scroll picture" />
-        <img src={img3} alt="scroll picture" />
-        <img src={img4} alt="scroll picture" />
-        <img src={img5} alt="scroll picture" />
-        <img src={img6} alt="scroll picture" />
-        <img src={img7} alt="scroll picture" />
-        <img src={img8} alt="scroll picture" />
-        <img src={img9} alt="scroll picture" />
-        <img src={img10} alt="scroll picture" />
-        <img src={img11} alt="scroll picture" />
-        <img src={img12} alt="scroll picture" />
-        <img src={img13} alt="scroll picture" />
-        <img src={img14} alt="scroll picture" />
-        <img src={img15} alt="scroll picture" />
+        <img src={img15} alt="scroll pic" className="pt-24 pb-0" />
+        <img src={img12} alt="scroll pic" className="pt-20 pb-4" />
+        <img src={img11} alt="scroll pic" className="pt-16 pb-8" />
+        <img src={img1} alt="scroll pic" className="pt-12 pb-12" />
+        <img src={img2} alt="scroll pic" className="pt-8 pb-16" />
+        <img src={img3} alt="scroll pic" className="pt-5 pb-[70px]" />
+        <img src={img4} alt="scroll pic" className="pt-2 pb-[82px]" />
+        <img src={img5} alt="scroll pic" className="pt-0 pb-24" />
+        <img src={img6} alt="scroll pic" className="pt-2 pb-[82px]" />
+        <img src={img7} alt="scroll pic" className="pt-5 pb-[70px]" />
+        <img src={img8} alt="scroll pic" className="pt-8 pb-16" />
+        <img src={img9} alt="scroll pic" className="pt-12 pb-12" />
+        <img src={img10} alt="scroll pic" className="pt-16 pb-8" />
+        <img src={img13} alt="scroll pic" className="pt-20 pb-4" />
+        <img src={img14} alt="scroll pic" className="pt-24 pb-0" />
       </div>
     </InfiniteLooper>
     <div className="flex justify-between pl-40 pr-56 items-end gap-5">
@@ -52,7 +52,7 @@ export const Frame7 = () => (
           CREATORS
         </p>
       </div>
-      <div className="rotate-180 mb-12 min-w-60 h-fit">
+      <div className="rotate-180 mb-12 min-w-80 h-fit">
         <InfiniteLooper speed="10" direction="right">
           <div className="flex gap-3 contentBlock--one">
             <div className="h-3 border border-app-yellow" />

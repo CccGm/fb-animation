@@ -67,10 +67,8 @@ const Motion = ({ isOn, ...rest }) => {
   );
 };
 
-const Switch = () => {
-  const [isOn, setIsOn] = useState(false);
-
-  return <Motion isOn={isOn} onClick={() => setIsOn(!isOn)} />;
+const Switch = ({ bore, setBore }) => {
+  return <Motion isOn={bore} onClick={() => setBore(!bore)} />;
 };
 
 export default Switch;

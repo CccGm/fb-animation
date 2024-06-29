@@ -34,6 +34,14 @@
     margin-right: 12px;
 }
 
+.contentBlock--two:last-of-type {
+    padding-right: 0px;
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
 /* Example content styles */
 /* :root {
     --green: #59C3C3;
