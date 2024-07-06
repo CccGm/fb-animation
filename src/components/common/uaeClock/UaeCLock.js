@@ -39,7 +39,9 @@ const UaeClock = ({ bgColorClock, bgColorSec }) => {
   }, []);
 
   return (
-    <div className="clock w-[350px]" style={{ backgroundColor: bgColorClock }}>
+    <div
+      className="clock w-[350px] scale-50 -my-12"
+      style={{ backgroundColor: bgColorClock }}>
       <div className="wrap">
         <span className="ho"></span>
         <span className="minu"></span>

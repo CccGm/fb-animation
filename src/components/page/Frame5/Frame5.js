@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import popcorn from "../../assets/images/page5/popcorn.png";
-import food from "../../assets/images/page5/food.png";
-import murti from "../../assets/images/page5/murti.png";
-import mahel from "../../assets/images/page5/mahal.png";
-import piano from "../../assets/images/page5/piano.png";
-import house from "../../assets/images/page5/house.png";
-import radio from "../../assets/images/page5/radio.png";
+import popcorn from "../../../assets/images/page5/popcorn.png";
+import food from "../../../assets/images/page5/food.png";
+import murti from "../../../assets/images/page5/murti.png";
+import mahel from "../../../assets/images/page5/mahal.png";
+import piano from "../../../assets/images/page5/piano.png";
+import house from "../../../assets/images/page5/house.png";
+import radio from "../../../assets/images/page5/radio.png";
 import "./Frame5.css";
 
 export const Frame5 = () => {

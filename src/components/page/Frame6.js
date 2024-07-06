@@ -3,18 +3,32 @@ import phone from "../../assets/images/page6/phone.png";
 import movie from "../../assets/images/page6/movies cd.png";
 import camera from "../../assets/images/page6/camera man.png";
 import lady from "../../assets/images/page6/ladie.png";
+import { InfiniteLooper } from "../common/imageloopVertical/app";
 
 export const Frame6 = () => {
   return (
-    <div className="w-full bg-black grid grid-cols-2 gap-3">
-      <div className="grid grid-rows-2 gap-3">
-        <div className="flex gap-3">
-          <img src={phone} alt="phone" style={{ width: "100%" }} />
-          <img src={movie} alt="movie cd" style={{ width: "100%" }} />
+    <div className="w-full bg-black grid grid-cols-2 gap-3 h-screen">
+      <div className="grid grid-cols-2 h-screen">
+        <div className="overflow-hidden">
+          <InfiniteLooper speed="4" direction="left">
+            <div className="flex flex-col gap-3">
+              <img src={phone} alt="phone" className="w-full " />
+
+              <img src={camera} alt="camera" className="w-full " />
+              <img src={movie} alt="movie cd" className="w-full" />
+              <img src={lady} alt="lady" className="w-full" />
+            </div>
+          </InfiniteLooper>
         </div>
-        <div className="flex gap-3">
-          <img src={camera} alt="camera" style={{ width: "100%" }} />
-          <img src={lady} alt="lady" style={{ width: "100%" }} />
+        <div className="overflow-hidden ">
+          <InfiniteLooper speed="4" direction="right">
+            <div className="flex flex-col gap-3">
+              <img src={phone} alt="phone" className="w-full " />
+              <img src={camera} alt="camera" className="w-full " />
+              <img src={movie} alt="movie cd" className="w-full" />
+              <img src={lady} alt="lady" className="w-full" />
+            </div>
+          </InfiniteLooper>
         </div>
       </div>
       <div className="w-full h-full flex items-center justify-center bg-app-orange">

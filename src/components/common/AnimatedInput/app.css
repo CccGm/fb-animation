@@ -1,0 +1,13 @@
+.placeholderCss::placeholder {
+    color: #C1FE00;
+}
+
+.placeholderCss {
+    font-family: "Poppins";
+    font-size: 22px;
+    background-color: #28282825;
+    color: #C1FE00;
+    border-color: #C1FE00;
+    border-bottom-width: 1px;
+    padding: 12px;
+}

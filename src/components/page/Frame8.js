@@ -1,5 +1,5 @@
 import React from "react";
-import { InfiniteLooper } from "../common/imageloop/app";
+import { InfiniteLooper } from "../common/imageloopHorizantal/app";
 import brand1 from "../../assets/images/page8/Brand 1.png";
 import brand2 from "../../assets/images/page8/Brand 2.png";
 import brand3 from "../../assets/images/page8/Brand 3.png";

@@ -1,0 +1,164 @@
+/* horizantal line */
+.cut-line-horizontal {
+    position: absolute;
+    background-color: black;
+    z-index: 10;
+    width: 0;
+    height: 5px;
+    left: 0;
+
+}
+
+.line-horizontal-1 {
+    top: 22%;
+    animation: cut-horizontal-1 1s 1s ease-in-out forwards;
+}
+
+.line-horizontal-2 {
+    top: 27%;
+    margin-left: 25%;
+    animation: cut-horizontal-2 1s 1s ease-in-out forwards;
+}
+
+.line-horizontal-3 {
+    top: 48%;
+    animation: cut-horizontal-3 1s 1s ease-in-out forwards;
+}
+
+.line-horizontal-4 {
+    top: 50%;
+    margin-left: 90%;
+    animation: cut-horizontal-4 1s 1s ease-in-out forwards;
+}
+
+.line-horizontal-5 {
+    top: 73%;
+    margin-left: 40%;
+    animation: cut-horizontal-5 1s 1s ease-in-out forwards;
+}
+
+/* vertical line */
+.cut-line-vertical {
+    position: absolute;
+    background-color: black;
+    z-index: 10;
+    height: 0;
+    width: 5px;
+    top: 0;
+    animation: cut-vertical 1s ease-in-out forwards;
+}
+
+.line-vertical-1 {
+    left: 10%;
+}
+
+.line-vertical-2 {
+    left: 25%;
+}
+
+.line-vertical-3 {
+    left: 40%;
+}
+
+.line-vertical-4 {
+    left: 65%;
+}
+
+.line-vertical-5 {
+    left: 90%;
+}
+
+@keyframes cut-horizontal-1 {
+    0% {
+        width: 0;
+        background-color: black;
+    }
+
+    100% {
+        width: 10%;
+        background-color: black;
+    }
+}
+
+@keyframes cut-horizontal-2 {
+    0% {
+        width: 0%;
+        background-color: black;
+    }
+
+    100% {
+        width: 65%;
+        background-color: black;
+    }
+}
+
+@keyframes cut-horizontal-3 {
+    0% {
+        width: 0%;
+        background-color: black;
+    }
+
+    100% {
+        width: 25%;
+        background-color: black;
+    }
+}
+
+@keyframes cut-horizontal-4 {
+    0% {
+        width: 0%;
+        background-color: black;
+    }
+
+    100% {
+        width: 10%;
+        background-color: black;
+    }
+}
+
+@keyframes cut-horizontal-5 {
+    0% {
+        width: 0%;
+        background-color: black;
+    }
+
+    100% {
+        width: 50%;
+        background-color: black;
+    }
+}
+
+@keyframes cut-vertical {
+    0% {
+        height: 0;
+        background-color: blcak;
+    }
+
+    100% {
+        height: 100%;
+        background-color: black;
+    }
+}
+
+/* image box */
+
+.image-section {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    position: absolute;
+    transition: transform 1s ease-in-out;
+}
+
+.section-1 {
+    width: 200px;
+    height: 200px;
+}
+
+.section-1:hover {
+    background: none;
+    background-color: blue;
+    color: blue;
+}
