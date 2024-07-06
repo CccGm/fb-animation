@@ -1,7 +1,7 @@
 import React from "react";
 import { Emailsvg } from "../../../assets/svg/Emailsvg";
 import { Phonesvg } from "../../../assets/svg/Phonesvg";
-import UaeClock from "../../common/UaeClock/UaeCLock";
+// import UaeClock from "../../common/UaeClock/UaeCLock";
 import MumbaiClock from "../../common/MumbaiClock/MumbaiClock";
 import "./Frame10.css";
 
@@ -89,7 +89,7 @@ export const Frame10 = () => {
               Near Infinity Mall, Andheri <br /> West, Mumbai, India
             </p>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <UaeClock bgColorClock={"#00E94F"} bgColorSec={"#FF1F9F"} />
             <p
               style={{
@@ -110,7 +110,7 @@ export const Frame10 = () => {
               Downtown Dubai,
               <br /> United Arab Emirates
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex gap-3 bg-white ">
