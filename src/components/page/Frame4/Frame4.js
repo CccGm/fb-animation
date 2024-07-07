@@ -9,10 +9,12 @@ export const Frame4 = () => {
   const [radio, setRadio] = useState(false);
   const [hover, setHover] = useState(false);
   const [hoverOut, setHoverOut] = useState(false);
+  const [textAnime, setTextAnime] = useState(false);
 
   const onChangeRadio = () => {
     setHoverOut(false);
     setRadio(!radio);
+    setTextAnime(true);
   };
 
   return (
@@ -259,13 +261,58 @@ export const Frame4 = () => {
           style={{ width: "100%", height: "100%" }}
         />
       </div>
-      {/* switch */}
+      {/* switch & kerfin */}
       <div className="switch-kerfin flex items-center flex-col w-fit">
-        <div className="-mb-1">
+        <div className="-mb-1 karfinAnime">
           <img src={karefin} alt="karefin" />
         </div>
-        <div className="-ml-5">
+        <div className="-ml-5 switchAnime">
           <CustomizedSwitches checked={radio} change={onChangeRadio} />
+        </div>
+      </div>
+      {/* text */}
+      <div className="absolute bottom-8 left-36 z-20">
+        <div className="flex gap-5 mini-fuggy">
+          <p
+            style={{
+              color: radio ? "#FFA616" : "#0093FF",
+              fontFamily: "Feeling",
+              fontSize: 24,
+              textDecoration: "underline",
+            }}>
+            FuzzyBox
+          </p>
+          <p
+            style={{
+              color: radio ? "#0093FF" : "#FFA616",
+              fontFamily: "Feeling",
+              fontSize: 24,
+            }}>
+            as a
+          </p>
+        </div>
+        <div key={radio ? "animated" : "non-animated"}>
+          {radio ? (
+            <p
+              style={{
+                color: "#ffffff",
+                fontFamily: "Geometric",
+                fontSize: 128,
+              }}
+              className={`text-anime-${textAnime ? "secound" : "first"}`}>
+              SERVICE
+            </p>
+          ) : (
+            <p
+              style={{
+                color: "#ffffff",
+                fontFamily: "Geometric",
+                fontSize: 128,
+              }}
+              className={`text-anime-${textAnime ? "secound" : "first"}`}>
+              PRODUCT
+            </p>
+          )}
         </div>
       </div>
     </div>

@@ -702,3 +702,79 @@
     right: 10%;
     z-index: 10;
 }
+
+.switchAnime {
+    opacity: 0;
+    animation: switch-anime 2s 3.5s forwards;
+}
+
+@keyframes switch-anime {
+    0% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* karfin */
+
+.karfinAnime {
+    opacity: 0;
+    animation: karfin-anime 2s 3s forwards;
+}
+
+@keyframes karfin-anime {
+    0% {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* text */
+.text-anime-first {
+    opacity: 0;
+    animation: main-text-anime 2s 3s forwards;
+}
+
+.text-anime-secound {
+    opacity: 0;
+    animation: main-text-anime 2s forwards;
+}
+
+@keyframes main-text-anime {
+    0% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* miniFuggy */
+
+.mini-fuggy {
+    opacity: 0;
+    animation: mini-fuggy 2s 3s forwards;
+}
+
+@keyframes mini-fuggy {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
