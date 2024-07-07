@@ -698,7 +698,7 @@
 
 .switch-kerfin {
     position: absolute;
-    top: calc(25vh - 100vh);
-    right: 6%;
+    top: -450px;
+    right: 100px;
     z-index: 10;
 }
