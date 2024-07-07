@@ -699,6 +699,6 @@
 .switch-kerfin {
     position: absolute;
     top: -450px;
-    right: 100px;
+    right: 10%;
     z-index: 10;
 }
