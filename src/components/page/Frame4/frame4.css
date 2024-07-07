@@ -693,3 +693,11 @@
         background-color: black;
     }
 }
+
+/* switch */
+
+.speakerSwitch {
+    position: absolute;
+    top: 8%;
+    right: 11%;
+}

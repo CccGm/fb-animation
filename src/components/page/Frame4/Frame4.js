@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import cameraMan from "../../../assets/images/page4/camera man.png";
 import persons from "../../../assets/images/page4/persons.png";
 import "./frame4.css";
+import CustomizedSwitches from "../../common/switchSpeaker/app";
 
 export const Frame4 = () => {
   const [radio, setRadio] = useState(false);
   const [hover, setHover] = useState(false);
   const [hoverOut, setHoverOut] = useState(false);
+
+  const onChangeRadio = () => {
+    setHoverOut(false);
+    setRadio(!radio);
+  };
 
   return (
     <div
@@ -252,6 +258,10 @@ export const Frame4 = () => {
           alt="camera man"
           style={{ width: "100%", height: "100%" }}
         />
+      </div>
+      {/* switch */}
+      <div className="speakerSwitch">
+        <CustomizedSwitches checked={radio} change={onChangeRadio} />
       </div>
     </div>
   );
