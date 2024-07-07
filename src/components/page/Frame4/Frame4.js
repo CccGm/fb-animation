@@ -271,7 +271,8 @@ export const Frame4 = () => {
         </div>
       </div>
       {/* text */}
-      <div className="absolute bottom-8 left-36 z-20">
+      <div
+        style={{ bottom: "7%", left: "10%", position: "absolute", zIndex: 20 }}>
         <div className="flex gap-5 mini-fuggy">
           <p
             style={{
