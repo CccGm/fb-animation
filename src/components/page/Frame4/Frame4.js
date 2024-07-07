@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import cameraMan from "../../../assets/images/page4/camera man.png";
 import persons from "../../../assets/images/page4/persons.png";
-import "./frame4.css";
+import karefin from "../../../assets/images/page3/Kerfin7_NEA_2526 2.png";
 import CustomizedSwitches from "../../common/switchSpeaker/app";
+import "./frame4.css";
 
 export const Frame4 = () => {
   const [radio, setRadio] = useState(false);
@@ -16,7 +17,6 @@ export const Frame4 = () => {
 
   return (
     <div
-      div
       className="w-full bg-black h-screen"
       style={{
         paddingTop: "1%",
@@ -260,8 +260,13 @@ export const Frame4 = () => {
         />
       </div>
       {/* switch */}
-      <div className="speakerSwitch">
-        <CustomizedSwitches checked={radio} change={onChangeRadio} />
+      <div className="switch-kerfin flex items-center flex-col w-fit">
+        <div className="-mb-1">
+          <img src={karefin} alt="karefin" />
+        </div>
+        <div className="-ml-5">
+          <CustomizedSwitches checked={radio} change={onChangeRadio} />
+        </div>
       </div>
     </div>
   );
