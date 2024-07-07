@@ -1,0 +1,102 @@
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue), 10%, 100%);
+    --fg: hsl(var(--hue), 10%, 0%);
+    --primary: hsl(var(--hue), 90%, 55%);
+    --primaryT: hsla(var(--hue), 90%, 55%, 0);
+    --transDur: 0.3s;
+    font-size: calc(16px + (32 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+
+
+/* Default */
+.theme {
+    display: flex;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.theme__label,
+.theme__toggle,
+.theme__toggle-wrap {
+    position: relative;
+}
+
+.theme__toggle,
+.theme__toggle:before {
+    display: block;
+}
+
+.theme__toggle {
+    background-color: #0093FF;
+    border-radius: 25% / 50%;
+    box-shadow: 0 0 0 0.125em var(--primaryT);
+    padding: 0.25em;
+    width: 6em;
+    height: 3em;
+    -webkit-appearance: none;
+    appearance: none;
+    transition:
+        background-color var(--transDur) ease-in-out,
+        box-shadow 0.15s ease-in-out,
+        transform var(--transDur) ease-in-out;
+}
+
+.theme__toggle:before {
+    background-color: #ffffff;
+    border-radius: 50%;
+    content: "";
+    width: 2.5em;
+    height: 2.5em;
+    transition:
+        background-color var(--transDur) ease-in-out,
+        transform var(--transDur) ease-in-out;
+}
+
+.theme__toggle:focus {
+    box-shadow: 0 0 0 0.125em var(--primary);
+    outline: transparent;
+}
+
+/* Checked */
+.theme__toggle:checked {
+    background-color: #FFA616;
+}
+
+.theme__toggle:checked:before,
+.theme__toggle:checked~.theme__icon {
+    transform: translateX(3em);
+}
+
+.theme__toggle:checked:before {
+    background-color: #ffffff;
+}
+
+.theme__toggle:checked~.theme__fill {
+    transform: translateX(0);
+}
+
+.theme__toggle:checked~.theme__icon .theme__icon-part:nth-child(1) {
+    box-shadow: 0.2em -0.2em 0 0.2em hsl(0, 0%, 100%) inset;
+    transform: scale(1);
+}
+
+.theme__toggle:checked~.theme__icon .theme__icon-part~.theme__icon-part {
+    opacity: 0;
+}
+
+.theme__toggle-wrap {
+    margin: 0 0.75em;
+}
+
+@supports selector(:focus-visible) {
+    .theme__toggle:focus {
+        box-shadow: 0 0 0 0.125em var(--primaryT);
+    }
+
+    .theme__toggle:focus-visible {
+        box-shadow: 0 0 0 0.125em var(--primary);
+    }
+}

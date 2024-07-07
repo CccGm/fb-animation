@@ -6,9 +6,18 @@ import "./frame4.css";
 export const Frame4 = () => {
   const [radio, setRadio] = useState(false);
   const [hover, setHover] = useState(false);
+  const [hoverOut, setHoverOut] = useState(false);
 
   return (
-    <div div className="w-full bg-black h-screen py-6 px-2">
+    <div
+      div
+      className="w-full bg-black h-screen"
+      style={{
+        paddingTop: "1%",
+        paddingBottom: "1%",
+        paddingLeft: "0.5%",
+        paddingRight: "0.5%",
+      }}>
       {/* cut lines */}
       <div>
         {/* horizantal lines */}
@@ -29,13 +38,215 @@ export const Frame4 = () => {
         </div>
       </div>
       {/* hover box */}
-      <div>
-        <div class="image-section section-1" />
+      <div className="overflow-hidden">
+        <div
+          class={`image-section box-1  ${
+            hover
+              ? radio
+                ? "hover-effect-blue-left "
+                : "hover-effect-yellow-left "
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-left-back"
+                : "hover-effect-yellow-left-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text" />
+        </div>
+        <div class="image-section box-2" />
+        <div class="image-section box-3" />
+        <div
+          class={`image-section box-4 ${
+            hover
+              ? radio
+                ? "hover-effect-blue-left "
+                : "hover-effect-yellow-left "
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-left-back"
+                : "hover-effect-yellow-left-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text">{radio ? `Video Production` : "Podcasts"}</div>
+        </div>
+        <div class="image-section box-5" />
+        <div
+          class={`image-section box-6 
+          ${
+            hover
+              ? radio
+                ? "hover-effect-blue-bottom"
+                : "hover-effect-yellow-bottom"
+              : ""
+          }  
+          ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-bottom-back"
+                : "hover-effect-yellow-bottom-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text">
+            {radio ? "Content Strategy" : "Mini Series"}
+          </div>
+        </div>
+        <div class="image-section box-7" />
+        <div
+          class={`image-section box-8 ${
+            hover
+              ? radio
+                ? "hover-effect-blue-top"
+                : "hover-effect-yellow-top"
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-top-back"
+                : "hover-effect-yellow-top-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text">
+            {radio ? "Digital Marketing" : "Food Videos"}
+          </div>
+        </div>
+        <div
+          class={`image-section box-9 ${
+            hover
+              ? radio
+                ? "hover-effect-blue-right"
+                : "hover-effect-yellow-right"
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-right-back"
+                : "hover-effect-yellow-right-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text">
+            {radio
+              ? "Performance & Collaboration"
+              : " Travel & Lifestyle  Videos"}
+          </div>
+        </div>
+        <div class="image-section box-10" />
+        <div class="image-section box-11" />
+        <div
+          class={`image-section box-12 ${
+            hover
+              ? radio
+                ? "hover-effect-blue-top"
+                : "hover-effect-yellow-top"
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-top-back"
+                : "hover-effect-yellow-top-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text">
+            {radio ? "Public Relation Management" : " Reaction Videos"}
+          </div>
+        </div>
+        <div
+          class={`image-section box-13 ${
+            hover
+              ? radio
+                ? "hover-effect-blue-left"
+                : "hover-effect-yellow-left"
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-left-back"
+                : "hover-effect-yellow-left-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text">
+            {radio ? "Design Services" : "Music Videos"}
+          </div>
+        </div>
+        <div class="image-section box-14" />
+        <div
+          class={`image-section box-15 ${
+            hover
+              ? radio
+                ? "hover-effect-blue-bottom"
+                : "hover-effect-yellow-bottom"
+              : ""
+          } ${
+            hoverOut && !hover
+              ? radio
+                ? "hover-effect-blue-bottom-back"
+                : "hover-effect-yellow-bottom-back"
+              : ""
+          }`}
+          onMouseEnter={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+            setHoverOut(true);
+          }}>
+          <div className="text" />
+        </div>
       </div>
-      {/* <div className=" absolute border border-app-pink">
-        <div className="w-32 h-32 bg-app-red"></div>
-      </div> */}
-      <div className="w-full h-full">
+      {/* image  */}
+      <div className="w-full h-full ">
         <img
           src={radio ? persons : cameraMan}
           alt="camera man"
