@@ -1,0 +1,41 @@
+.scroll-container {
+  width: auto; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-content-up {
+  display: flex;
+  flex-direction: column;
+  animation: scrollUp 5s linear infinite;
+}
+
+.scroll-content-down {
+  display: flex;
+  flex-direction: column;
+  animation: scrollDown 5s linear infinite;
+}
+
+.scroll-content img {
+  width: 100%;
+  display: block;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
