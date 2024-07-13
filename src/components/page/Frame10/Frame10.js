@@ -3,7 +3,7 @@ import { Emailsvg } from "../../../assets/svg/Emailsvg";
 import { Phonesvg } from "../../../assets/svg/Phonesvg";
 import MumbaiClock from "../../common/MumbaiClock/MumbaiClock";
 import "./Frame10.css";
-import { UaeClock } from "../../common/UaeClock/UaeClock";
+import { UaeClock } from "../../common/uaeClock/UaeClock";
 
 export const Frame10 = () => {
   return (
