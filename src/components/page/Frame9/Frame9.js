@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import kerfin from "../../../assets/images/page9/Kerfin7_NEA_2530 2.png";
 import { Sendsvg } from "../../../assets/svg/Sendsvg";
 import { AnimatedInput } from "../../common/AnimatedInput/app";
+import "./Frame9.css";
 
 export const Frame9 = () => {
   const [name, setName] = useState("");
@@ -124,11 +125,13 @@ export const Frame9 = () => {
 
           {/* button */}
           <div className="flex justify-end mt-5">
-            <button
-              className="flex gap-2 bg-app-lightGreen w-36 h-14 justify-center rounded-full text-app-purple text-2xl items-center"
-              style={{ fontFamily: "Poppins" }}>
-              Send <Sendsvg />
-            </button>
+            <div className="bg-pulse p-2 rounded-full bg-app-offBlack">
+              <button
+                className="flex gap-2 bg-app-lightGreen w-36 h-14 justify-center rounded-full text-app-purple text-2xl items-center"
+                style={{ fontFamily: "Poppins" }}>
+                Send <Sendsvg />
+              </button>
+            </div>
           </div>
         </div>
       </div>

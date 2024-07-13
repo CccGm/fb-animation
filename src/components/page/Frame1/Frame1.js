@@ -8,54 +8,105 @@ import action from "../../../assets/images/page1/Clapper.png";
 import "./Frame1.css";
 
 export const Frame1 = () => {
-  const [inView, setInView] = useState(false);
-  const divRef = useRef(null);
   const images = [action, light, camera];
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const animeRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
   const [bore, setBore] = useState(true);
-  const [rotateFuggy, setRotateFuggy] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 2000);
 
+    setTimeout(() => {
+      setBore(false);
+      // setRotateFuggy(true);
+    }, 3000);
+
     return () => clearInterval(interval);
   }, []);
 
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("in-view");
+  //       } else {
+  //         entry.target.classList.remove("in-view");
+  //       }
+  //     });
+  //   });
+
+  //   const elementsToAnimate = [
+  //     section1Ref.current,
+  //     section2Ref.current,
+  //     animatedBoxRef.current,
+  //   ];
+  //   elementsToAnimate.forEach((element) => observer.observe(element));
+
+  //   return () => {
+  //     elementsToAnimate.forEach((element) => observer.unobserve(element));
+  //   };
+  // }, []);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
+          // entry.target.classList.add("in-view");
+          setAnimate(true);
         }
-      },
-      { threshold: 0.1 }
-    );
+        // else {
+        // entry.target.classList.remove("in-view");
+        // setAnimate(false);
+        // }
+      });
+    });
 
-    if (divRef.current) {
-      observer.observe(divRef.current);
-    }
-
-    setTimeout(() => {
-      setBore(false);
-      setRotateFuggy(true);
-    }, 3000);
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
 
     return () => {
-      if (divRef.current) {
-        observer.unobserve(divRef.current);
-      }
+      observer.unobserve(elementsToAnimate);
     };
   }, []);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setInView(true);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     { threshold: 0.1 }
+  //   );
+
+  //   if (divRef.current) {
+  //     observer.observe(divRef.current);
+  //   }
+
+  //   setTimeout(() => {
+  //     setBore(false);
+  //     setRotateFuggy(true);
+  //   }, 3000);
+
+  //   return () => {
+  //     if (divRef.current) {
+  //       observer.unobserve(divRef.current);
+  //     }
+  //   };
+  // }, []);
 
   return (
     <div
       className={`w-full bg-black min-h-screen p-2 overflow-hidden relative snap-start ${
         bore ? "grayscale" : "grayscale-0"
-      }`}>
+      }`}
+      ref={animeRef}>
       {/* <div className="flex h-fit w-full justify-end">
         <div
           style={{
@@ -114,9 +165,9 @@ export const Frame1 = () => {
           </span>
         </p>
         <p
-          ref={divRef}
+          ref={animeRef}
           className={`translate-y-start transition-transform1 ${
-            inView ? "translate-y-0" : ""
+            animate ? "translate-y-0" : ""
           }`}
           style={{
             color: "#ffffff",
@@ -127,7 +178,10 @@ export const Frame1 = () => {
           LIVE FROM
           <br /> FUZzYBOx MEDIA<span style={{ color: "#ED1D24" }}>.</span>
         </p>
-        <div className="absolute top-[190px] left-[820px] bounce2">
+        <div
+          className={`absolute top-[190px] left-[820px] ${
+            animate ? "bounce2" : ""
+          }`}>
           <img src={cartoon} alt="popcorn" />
         </div>
       </div>
