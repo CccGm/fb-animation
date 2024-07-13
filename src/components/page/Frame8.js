@@ -42,7 +42,7 @@ export const Frame8 = () => {
   ];
 
   return (
-    <div className="w-full bg-black min-h-screen">
+    <div className="w-full bg-black min-h-screen snap-start">
       {/* <div className="flex justify-end h-fit">
         <div
           style={{
