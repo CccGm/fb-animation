@@ -1,9 +1,9 @@
 import React from "react";
 import { Emailsvg } from "../../../assets/svg/Emailsvg";
 import { Phonesvg } from "../../../assets/svg/Phonesvg";
-import UaeClock from "../../common/UaeClock/UaeCLock";
 import MumbaiClock from "../../common/MumbaiClock/MumbaiClock";
 import "./Frame10.css";
+import { UaeClock } from "../../common/UaeClock/UaeClock";
 
 export const Frame10 = () => {
   return (
