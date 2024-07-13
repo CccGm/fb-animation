@@ -1,0 +1,176 @@
+.cameraframe-line-top-left {
+    animation: camera-on-top-left 1s forwards ease-in-out;
+}
+
+@keyframes camera-on-top-left {
+    0% {
+        top: 50%;
+        left: 50%;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+.cameraframe-line-bottom-left {
+    animation: camera-on-bottom-left 1s forwards ease-in-out;
+}
+
+@keyframes camera-on-bottom-left {
+    0% {
+        bottom: 50%;
+        left: 50%;
+    }
+
+    100% {
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.cameraframe-line-top-right {
+    animation: camera-on-top-right 1s forwards ease-in-out;
+}
+
+@keyframes camera-on-top-right {
+    0% {
+        top: 50%;
+        right: 50%;
+    }
+
+    100% {
+        top: 0;
+        right: 0;
+    }
+}
+
+.cameraframe-line-bottom-right {
+    animation: camera-on-bottom-right 1s forwards ease-in-out;
+}
+
+@keyframes camera-on-bottom-right {
+    0% {
+        bottom: 50%;
+        right: 50%;
+    }
+
+    100% {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.record-red {
+    animation: blink-record 1s 1s forwards ease-in-out;
+}
+
+@keyframes blink-record {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.cell {
+    transform: translateX(580%);
+    animation: fillBattery 1s 1s forwards;
+}
+
+.cell:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.cell:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.cell:nth-child(4) {
+    animation-delay: 1.6s;
+}
+
+.cell:nth-child(5) {
+    animation-delay: 1.8s;
+}
+
+@keyframes fillBattery {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.k-blink {
+    background-color: black;
+    color: white;
+    animation: blink4k 1s 1s forwards;
+}
+
+@keyframes blink4k {
+    to {
+        background-color: white;
+        color: black;
+    }
+}
+
+.karfin-popcorn {
+
+    animation: karfin-right-bottom 3s forwards;
+
+
+}
+
+@keyframes karfin-right-bottom {
+    0% {
+
+        bottom: 20%;
+        right: 50%;
+    }
+
+    50% {
+        bottom: 0;
+        right: 0;
+    }
+
+    100% {
+        bottom: -223px;
+        right: 0;
+    }
+}
+
+.countdown-number {
+    position: absolute;
+    display: flex;
+    gap: 4px;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: Poppins;
+    align-items: center;
+    justify-content: center;
+    bottom: 32px;
+    width: 100%;
+}
+
+.counter-number {
+    animation: counter-nuber 2.5s 1s forwards;
+    height: 35px;
+}
+
+@keyframes counter-nuber {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-330%);
+    }
+}

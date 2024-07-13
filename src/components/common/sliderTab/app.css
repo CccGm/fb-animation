@@ -1,0 +1,33 @@
+.sidenav-menu {
+    position: fixed;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: opacity 0.3s, transform 0.3s;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 40;
+}
+
+.menu-icon:hover {
+    transform: scale(1.4);
+    transition: transform 1s ease-in-out;
+}
+
+.side-menu-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scaleX(1);
+    transition: transform 0.5s;
+}
+
+.side-menu-closing {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.5s;
+}

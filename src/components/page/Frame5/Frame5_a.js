@@ -1,48 +1,17 @@
 import React, { useState } from "react";
-import popcorn from "../../../assets/images/page5/popcorn.png";
-import food from "../../../assets/images/page5/food.png";
-import murti from "../../../assets/images/page5/murti.png";
-import "./Frame5.css";
+import mahel from "../../../assets/images/page5/mahal.png";
+import piano from "../../../assets/images/page5/piano.png";
 
-export const Frame5 = () => {
+export const Frame5_A = () => {
   const [hover, setHovere] = useState(false);
-
   return (
     <div className="w-full bg-black min-h-screen snap-start">
-      <div className="h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center popcorn-container-hide">
-        <div>
-          <p
-            className=" underline mt-8"
-            style={{
-              color: "#EEF51B",
-              fontFamily: "Feeling",
-              fontSize: 24,
-            }}>
-            FuzzyBox
-          </p>
-          <p
-            style={{
-              color: "#ffffff",
-              fontFamily: "Geometric",
-              fontSize: 128,
-            }}>
-            CREATIONS
-          </p>
-        </div>
-        <img
-          src={popcorn}
-          alt="popcorn"
-          style={{ width: 124, height: 222 }}
-          className="popcotn-rotate"
-        />
-      </div>
-      {/* image screen 1 */}
       <div className="flex ease-in-out duration-700 container1">
         <div
           className={`h-fit ${
-            hover ? "w-1/2" : "w-3/4"
-          } ease-in-out duration-500 image1`}>
-          <img src={food} alt="food" style={{ width: "100%" }} />
+            hover ? "w-3/4" : "w-1/2"
+          } ease-in-out duration-500 image3`}>
+          <img src={mahel} alt="mahel" style={{ width: "100%" }} />
           <div className="flex justify-between p-7 items-center">
             <div>
               <p
@@ -51,7 +20,7 @@ export const Frame5 = () => {
                   fontSize: 20,
                   fontFamily: "Poppins",
                 }}>
-                Exploring Pav Bhaji on the Streets of Mumbai
+                Palace Hunting with Saloni
               </p>
               <p
                 style={{
@@ -59,13 +28,13 @@ export const Frame5 = () => {
                   fontSize: 14,
                   fontFamily: "Poppins",
                 }}>
-                2.2 lakh views
+                2.3 lakh views
               </p>
             </div>
-            <div className="border-r border-b border-app-yellow p-3">
+            <div className="border-r border-b border-app-green p-3">
               <p
                 style={{
-                  color: "#EEF51B",
+                  color: "#00E94F",
                   fontSize: 14,
                   fontFamily: "Poppins",
                 }}>
@@ -76,12 +45,12 @@ export const Frame5 = () => {
         </div>
         <div
           className={`h-fit ${
-            hover ? "w-3/4" : "w-1/2"
-          } ease-in-out duration-500 image2`}
+            hover ? "w-1/2" : "w-3/4"
+          } ease-in-out duration-500 image4`}
           onMouseEnter={() => setHovere(true)}
           onMouseLeave={() => setHovere(false)}>
-          <img src={murti} alt="murti" style={{ width: "100%" }} />
-          <div className="flex justify-between p-7 items-center ">
+          <img src={piano} alt="piano" style={{ width: "100%" }} />
+          <div className="flex justify-between p-7 items-center">
             <div>
               <p
                 style={{
@@ -89,7 +58,7 @@ export const Frame5 = () => {
                   fontSize: 20,
                   fontFamily: "Poppins",
                 }}>
-                Antique stuffs from Jodhpur
+                The Corporate Music Talent Show
               </p>
               <p
                 style={{
@@ -97,13 +66,13 @@ export const Frame5 = () => {
                   fontSize: 14,
                   fontFamily: "Poppins",
                 }}>
-                1.8 lakh views
+                1.13 lakh views
               </p>
             </div>
-            <div className="border-r border-b border-app-red p-3">
+            <div className="border-r border-b border-app-orange p-3">
               <p
                 style={{
-                  color: "#ED1D24",
+                  color: "#FFA616",
                   fontSize: 14,
                   fontFamily: "Poppins",
                 }}>

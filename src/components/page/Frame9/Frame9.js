@@ -10,28 +10,8 @@ export const Frame9 = () => {
   const [reachMe, setReachMe] = useState("");
 
   return (
-    <div className="w-full bg-app-purple min-h-screen">
-      <div
-        style={{
-          width: 200,
-          height: 142,
-          justifyContent: "center",
-          display: "flex",
-          position: "absolute",
-          top: 0,
-          right: 0,
-        }}>
-        <p
-          className=" underline mt-8"
-          style={{
-            color: "#C1FE00",
-            fontFamily: "Feeling",
-            fontSize: 24,
-          }}>
-          FuzzyBox
-        </p>
-      </div>
-      <div className="flex gap-8 items-center h-screen justify-center">
+    <div className="w-full bg-app-purple min-h-screen snap-start">
+      <div className="flex gap-8 items-center min-h-screen justify-center py-20">
         <div>
           <img src={kerfin} alt="kerfin" />
         </div>

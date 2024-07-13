@@ -43,7 +43,7 @@ export const Frame8 = () => {
 
   return (
     <div className="w-full bg-black min-h-screen">
-      <div className="flex justify-end h-fit">
+      {/* <div className="flex justify-end h-fit">
         <div
           style={{
             width: 200,
@@ -62,9 +62,9 @@ export const Frame8 = () => {
             FuzzyBox
           </p>
         </div>
-      </div>
+      </div> */}
       <div className="rotate-[4deg] overflow-hidden">
-        <InfiniteLooper speed="20" direction="left">
+        <InfiniteLooper speed="20" direction="right">
           <div className="flex bg-app-blue p-5 contentBlock--two gap-5 h-[300px]">
             {Blue?.map((image, index) => {
               return (

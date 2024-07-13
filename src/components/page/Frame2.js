@@ -25,8 +25,8 @@ export const Frame2 = () => {
   }, []);
 
   return (
-    <div className="w-full bg-app-pink h-screen">
-      <div
+    <div className="w-full bg-app-pink h-screen snap-start">
+      {/* <div
         style={{
           width: 200,
           height: 142,
@@ -44,8 +44,8 @@ export const Frame2 = () => {
           }}>
           FuzzyBox
         </p>
-      </div>
-      <div className="grid grid-cols-2 h-full">
+      </div> */}
+      <div className="grid grid-cols-2 h-full relative">
         <div className="flex justify-center items-center">
           <p
             style={{

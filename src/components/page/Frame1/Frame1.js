@@ -53,10 +53,10 @@ export const Frame1 = () => {
 
   return (
     <div
-      className={`w-full bg-black h-screen p-2 overflow-hidden ${
+      className={`w-full bg-black min-h-screen p-2 overflow-hidden relative snap-start ${
         bore ? "grayscale" : "grayscale-0"
       }`}>
-      <div className="flex h-fit w-full justify-end">
+      {/* <div className="flex h-fit w-full justify-end">
         <div
           style={{
             width: 200,
@@ -80,7 +80,7 @@ export const Frame1 = () => {
             FuzzyBox
           </p>
         </div>
-      </div>
+      </div> */}
 
       <div>
         {images.map((src, index) => (
@@ -98,7 +98,7 @@ export const Frame1 = () => {
         ))}
       </div>
 
-      <div className="py-5 pl-40 mt-48 ">
+      <div className="py-5 pl-40 mt-[350px] ">
         <p style={{ color: "#ED1D24", fontFamily: "Feeling", fontSize: 28 }}>
           <span style={{ color: currentIndex === 1 ? "#ffffff" : "#ED1D24" }}>
             lights
@@ -122,6 +122,7 @@ export const Frame1 = () => {
             color: "#ffffff",
             fontFamily: "Geometric",
             fontSize: 128,
+            lineHeight: 1.3,
           }}>
           LIVE FROM
           <br /> FUZzYBOx MEDIA<span style={{ color: "#ED1D24" }}>.</span>
@@ -131,29 +132,8 @@ export const Frame1 = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3  px-8">
-        <div />
-        {/* <div className="grid grid-flow-col gap-2 justify-center items-center">
-          <div>
-            <img src="" alt="facebook" />
-          </div>
-          <div>
-            <img src="" alt="instagram" />
-          </div>
-          <div>
-            <img src="" alt="facebook" />
-          </div>
-          <div>
-            <img src="" alt="youtube" />
-          </div>
-          <div>
-            <img src="" alt="indeed" />
-          </div>
-        </div> */}
-        <SliderTab />
-        <div className="flex justify-end">
-          <Switch bore={bore} setBore={setBore} />
-        </div>
+      <div className="flex justify-end w-full pb-10 pr-10">
+        <Switch bore={bore} setBore={setBore} />
       </div>
     </div>
   );

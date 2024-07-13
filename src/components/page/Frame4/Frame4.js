@@ -19,7 +19,7 @@ export const Frame4 = () => {
 
   return (
     <div
-      className="w-full bg-black h-screen"
+      className="w-full bg-black h-screen relative overflow-hidden snap-start"
       style={{
         paddingTop: "1%",
         paddingBottom: "1%",
@@ -27,9 +27,9 @@ export const Frame4 = () => {
         paddingRight: "0.5%",
       }}>
       {/* cut lines */}
-      <div>
+      <div className="">
         {/* horizantal lines */}
-        <div>
+        <div className="">
           <div class="cut-line-horizontal line-horizontal-1" />
           <div class="cut-line-horizontal line-horizontal-2" />
           <div class="cut-line-horizontal line-horizontal-3" />
