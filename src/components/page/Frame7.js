@@ -17,7 +17,7 @@ import img14 from "../../assets/images/page7/Rectangle 146.png";
 import img15 from "../../assets/images/page7/Rectangle 147.png";
 
 export const Frame7 = () => (
-  <div className="w-full bg-black min-h-screen py-8">
+  <div className="w-full bg-black min-h-screen py-8 snap-start">
     <InfiniteLooper speed="20" direction="left">
       <div className="flex gap-3 contentBlock--one">
         <img src={img15} alt="scroll pic" className="pt-24 pb-0" />
