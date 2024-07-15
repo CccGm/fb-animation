@@ -1,6 +1,8 @@
 .scroll-container {
-  width: auto; /* Adjust the width as needed */
-  height: auto; /* Adjust the height as needed */
+  width: auto;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Adjust the height as needed */
   overflow: hidden;
   position: relative;
 }
@@ -14,7 +16,7 @@
 .scroll-content-down {
   display: flex;
   flex-direction: column;
-  animation: scrollDown 5s linear infinite;
+  animation: scrollDown 4.5s linear infinite;
 }
 
 .scroll-content img {
@@ -26,6 +28,7 @@
   0% {
     transform: translateY(0%);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -35,6 +38,7 @@
   0% {
     transform: translateY(-50%);
   }
+
   100% {
     transform: translateY(0%);
   }

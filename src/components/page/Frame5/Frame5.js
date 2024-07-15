@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import popcorn from "../../../assets/images/page5/popcorn.png";
 import food from "../../../assets/images/page5/food.png";
 import murti from "../../../assets/images/page5/murti.png";
@@ -7,9 +7,35 @@ import "./Frame5.css";
 export const Frame5 = () => {
   const [hover, setHovere] = useState(false);
 
+  const animeRef = useRef(null);
+  const [animate, setAnimate] = useState(true);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         setAnimate(true);
+  //       } else {
+  //         setAnimate(false);
+  //       }
+  //     });
+  //   });
+
+  //   const elementsToAnimate = animeRef.current;
+  //   observer.observe(elementsToAnimate);
+
+  //   return () => {
+  //     observer.unobserve(elementsToAnimate);
+  //     setAnimate(false);
+  //   };
+  // }, []);
+
   return (
     <div className="w-full bg-black min-h-screen snap-start">
-      <div className="h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center popcorn-container-hide">
+      <div
+        className={`h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center ${
+          animate ? "popcorn-container-hide" : ""
+        }`}>
         <div>
           <p
             className=" underline mt-8"
@@ -37,7 +63,7 @@ export const Frame5 = () => {
         />
       </div>
       {/* image screen 1 */}
-      <div className="flex ease-in-out duration-700 container1">
+      <div className="flex ease-in-out duration-700 container1" ref={animeRef}>
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"

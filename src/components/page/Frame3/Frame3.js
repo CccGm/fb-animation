@@ -25,10 +25,9 @@ export const Frame3 = () => {
       setAnimate(false);
     };
   }, []);
+
   return (
-    <div
-      className="w-full relative bg-black min-h-screen snap-start"
-      ref={animeRef}>
+    <div className="w-full relative bg-black min-h-screen snap-start">
       <div className="p-24 absolute  w-full h-full overflow-hidden">
         <div className="border flex h-full relative w-full">
           {/* border */}
@@ -81,8 +80,7 @@ export const Frame3 = () => {
           <div
             className={`absolute -bottom-0 right-0 ${
               animate ? "karfin-popcorn" : ""
-            }`}
-            ref={animeRef}>
+            }`}>
             <img src={karfin} alt="popcorn karfin" />
           </div>
 
@@ -106,7 +104,7 @@ export const Frame3 = () => {
               </p>
             </div>
             {/* battery */}
-            <div className="flex items-center">
+            <div className="flex items-center" ref={animeRef}>
               <div className="w-2 border-white h-5 border-2 -mr-[1.5px] " />
               <div className="border-2 border-white h-10 p-1 grid grid-flow-col gap-1 overflow-hidden">
                 <div className={`w-2 ${animate ? "cell" : ""} `} />
@@ -126,7 +124,9 @@ export const Frame3 = () => {
             </div>
           </div>
           {/* 4k */}
-          <div className="absolute bottom-0 left-0 p-10 flex gap-3 items-center">
+          <div
+            className="absolute bottom-0 left-0 p-10 flex gap-3 items-center"
+            ref={animeRef}>
             <p
               style={{
                 color: "#ffffff",

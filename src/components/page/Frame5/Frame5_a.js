@@ -10,7 +10,9 @@ export const Frame5_A = () => {
         <div
           className={`h-fit ${
             hover ? "w-3/4" : "w-1/2"
-          } ease-in-out duration-500 image3`}>
+          } ease-in-out duration-500 image3`}
+          onMouseEnter={() => setHovere(true)}
+          onMouseLeave={() => setHovere(false)}>
           <img src={mahel} alt="mahel" style={{ width: "100%" }} />
           <div className="flex justify-between p-7 items-center">
             <div>
@@ -46,9 +48,7 @@ export const Frame5_A = () => {
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"
-          } ease-in-out duration-500 image4`}
-          onMouseEnter={() => setHovere(true)}
-          onMouseLeave={() => setHovere(false)}>
+          } ease-in-out duration-500 image4`}>
           <img src={piano} alt="piano" style={{ width: "100%" }} />
           <div className="flex justify-between p-7 items-center">
             <div>

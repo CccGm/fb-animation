@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import cameraMan from "../../../assets/images/page4/camera man.png";
 import persons from "../../../assets/images/page4/persons.png";
 import karefin from "../../../assets/images/page3/Kerfin7_NEA_2526 2.png";
@@ -7,9 +7,48 @@ import "./frame4.css";
 
 export const Frame4 = () => {
   const [radio, setRadio] = useState(false);
+  const [startHover, setStartHover] = useState(false);
   const [hover, setHover] = useState(false);
   const [hoverOut, setHoverOut] = useState(false);
   const [textAnime, setTextAnime] = useState(false);
+
+  const animeRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+          setTimeout(() => {
+            setStartHover(true);
+          }, 3000);
+        } else {
+          setTimeout(() => {
+            setAnimate(false);
+            setHover(false);
+            setHoverOut(false);
+            setRadio(false);
+            setStartHover(false);
+            setTextAnime(false);
+          }, 500);
+        }
+      });
+    });
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+      setAnimate(false);
+      setHover(false);
+      setHoverOut(false);
+      setRadio(false);
+      setStartHover(false);
+      setTextAnime(false);
+    };
+  }, []);
 
   const onChangeRadio = () => {
     setHoverOut(false);
@@ -27,28 +66,49 @@ export const Frame4 = () => {
         paddingRight: "0.5%",
       }}>
       {/* cut lines */}
-      <div className="">
-        {/* horizantal lines */}
-        <div className="">
-          <div class="cut-line-horizontal line-horizontal-1" />
-          <div class="cut-line-horizontal line-horizontal-2" />
-          <div class="cut-line-horizontal line-horizontal-3" />
-          <div class="cut-line-horizontal line-horizontal-4" />
-          <div class="cut-line-horizontal line-horizontal-5" />
-        </div>
-        {/* vertical line */}
+      <div>
+        {/* horizantal lines --- */}
         <div>
-          <div class="cut-line-vertical line-vertical-1" />
-          <div class="cut-line-vertical line-vertical-2" />
-          <div class="cut-line-vertical line-vertical-3" />
-          <div class="cut-line-vertical line-vertical-4" />
-          <div class="cut-line-vertical line-vertical-5" />
+          <div
+            class={`cut-line-horizontal ${animate ? "line-horizontal-1" : ""}`}
+          />
+          <div
+            class={`cut-line-horizontal ${animate ? "line-horizontal-2" : ""}`}
+          />
+          <div
+            class={`cut-line-horizontal ${animate ? "line-horizontal-3" : ""}`}
+          />
+          <div
+            class={`cut-line-horizontal ${animate ? "line-horizontal-4" : ""}`}
+          />
+          <div
+            class={`cut-line-horizontal ${animate ? "line-horizontal-5" : ""}`}
+          />
+        </div>
+        {/* vertical line || */}
+        <div>
+          <div
+            class={`${animate ? "cut-line-vertical line-vertical-1" : ""}`}
+          />
+          <div
+            class={`${animate ? "cut-line-vertical line-vertical-2" : ""}`}
+          />
+          <div
+            class={`${animate ? "cut-line-vertical line-vertical-3" : ""}`}
+          />
+          <div
+            class={`${animate ? "cut-line-vertical line-vertical-4" : ""}`}
+          />
+          <div
+            class={`${animate ? "cut-line-vertical line-vertical-5" : ""}`}
+          />
         </div>
       </div>
+
       {/* hover box */}
       <div className="overflow-hidden">
         <div
-          class={`image-section box-1  ${
+          class={`image-section ${animate ? "box-1" : ""}  ${
             hover
               ? radio
                 ? "hover-effect-blue-left "
@@ -62,18 +122,22 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text" />
         </div>
-        <div class="image-section box-2" />
-        <div class="image-section box-3" />
+        <div class={`image-section ${animate ? "box-2" : ""}`} />
+        <div class={`image-section ${animate ? "box-3" : ""}`} />
         <div
-          class={`image-section box-4 ${
+          class={`image-section ${animate ? "box-4" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-left "
@@ -87,17 +151,21 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text">{radio ? `Video Production` : "Podcasts"}</div>
         </div>
-        <div class="image-section box-5" />
+        <div class={`image-section ${animate ? "box-5" : ""}`} />
         <div
-          class={`image-section box-6 
+          class={`image-section ${animate ? "box-6" : ""} 
           ${
             hover
               ? radio
@@ -113,19 +181,23 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text">
             {radio ? "Content Strategy" : "Mini Series"}
           </div>
         </div>
-        <div class="image-section box-7" />
+        <div class={`image-section ${animate ? "box-7" : ""}`} />
         <div
-          class={`image-section box-8 ${
+          class={`image-section ${animate ? "box-8" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-top"
@@ -139,18 +211,22 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text">
             {radio ? "Digital Marketing" : "Food Videos"}
           </div>
         </div>
         <div
-          class={`image-section box-9 ${
+          class={`image-section ${animate ? "box-9" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-right"
@@ -164,11 +240,15 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text">
             {radio
@@ -176,10 +256,10 @@ export const Frame4 = () => {
               : " Travel & Lifestyle  Videos"}
           </div>
         </div>
-        <div class="image-section box-10" />
-        <div class="image-section box-11" />
+        <div class={`image-section ${animate ? "box-10" : ""}`} />
+        <div class={`image-section ${animate ? "box-11" : ""}`} />
         <div
-          class={`image-section box-12 ${
+          class={`image-section ${animate ? "box-12" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-top"
@@ -193,18 +273,22 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text">
             {radio ? "Public Relation Management" : " Reaction Videos"}
           </div>
         </div>
         <div
-          class={`image-section box-13 ${
+          class={`image-section ${animate ? "box-13" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-left"
@@ -218,19 +302,23 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text">
             {radio ? "Design Services" : "Music Videos"}
           </div>
         </div>
-        <div class="image-section box-14" />
+        <div class={`image-section ${animate ? "box-14" : ""}`} />
         <div
-          class={`image-section box-15 ${
+          class={`image-section ${animate ? "box-15" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-bottom"
@@ -244,36 +332,46 @@ export const Frame4 = () => {
               : ""
           }`}
           onMouseEnter={() => {
-            setHover(true);
+            if (startHover) {
+              setHover(true);
+            }
           }}
           onMouseLeave={() => {
-            setHover(false);
-            setHoverOut(true);
+            if (startHover) {
+              setHover(false);
+              setHoverOut(true);
+            }
           }}>
           <div className="text" />
         </div>
       </div>
+
       {/* image  */}
-      <div className="w-full h-full ">
+      <div className="w-full h-full " ref={animeRef}>
         <img
           src={radio ? persons : cameraMan}
           alt="camera man"
           style={{ width: "100%", height: "100%" }}
         />
       </div>
+
       {/* switch & kerfin */}
-      <div className="switch-kerfin flex items-center flex-col w-fit">
-        <div className="-mb-1 karfinAnime">
+      <div
+        className={`${
+          animate ? "switch-kerfin" : ""
+        }  flex items-center flex-col w-fit`}>
+        <div className={`-mb-1 ${animate ? "karfinAnime" : ""}`}>
           <img src={karefin} alt="karefin" />
         </div>
-        <div className="-ml-5 switchAnime">
+        <div className={`-ml-5 ${animate ? "switchAnime" : ""}`}>
           <CustomizedSwitches checked={radio} change={onChangeRadio} />
         </div>
       </div>
+
       {/* text */}
       <div
         style={{ bottom: "7%", left: "10%", position: "absolute", zIndex: 20 }}>
-        <div className="flex gap-5 mini-fuggy">
+        <div className={`flex gap-5 ${animate ? "mini-fuggy" : ""}`}>
           <p
             style={{
               color: radio ? "#FFA616" : "#0093FF",
@@ -300,7 +398,9 @@ export const Frame4 = () => {
                 fontFamily: "Geometric",
                 fontSize: 128,
               }}
-              className={`text-anime-${textAnime ? "secound" : "first"}`}>
+              className={`${
+                animate ? `text-anime-${textAnime ? "secound" : "first"}` : ""
+              }`}>
               SERVICE
             </p>
           ) : (
@@ -310,7 +410,9 @@ export const Frame4 = () => {
                 fontFamily: "Geometric",
                 fontSize: 128,
               }}
-              className={`text-anime-${textAnime ? "secound" : "first"}`}>
+              className={`${
+                animate ? `text-anime-${textAnime ? "secound" : "first"}` : ""
+              }`}>
               PRODUCT
             </p>
           )}
