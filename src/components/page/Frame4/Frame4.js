@@ -363,7 +363,7 @@ export const Frame4 = () => {
         <div className={`-mb-1 ${animate ? "karfinAnime" : ""}`}>
           <img src={karefin} alt="karefin" />
         </div>
-        <div className={`-ml-5 ${animate ? "switchAnime" : ""}`}>
+        <div className={`-ml-5 opacity-0 ${animate ? "switchAnime" : ""}`}>
           <CustomizedSwitches checked={radio} change={onChangeRadio} />
         </div>
       </div>

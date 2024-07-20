@@ -21,7 +21,7 @@ export const Frame5 = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.01 }
     );
 
     const elementsToAnimate = animeRef.current;
