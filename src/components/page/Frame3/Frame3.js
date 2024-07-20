@@ -159,12 +159,12 @@ export const Frame3 = () => {
 
           {/* Digit Number */}
 
-          <div class="countdown-number">
+          <div className="countdown-number">
             <div>00</div>
             <div>:</div>
             <div>00</div>
             <div>:</div>
-            <div class="h-12 overflow-hidden grid grid-flow-row gap-1">
+            <div className="h-12 overflow-hidden grid grid-flow-row gap-1">
               <div className={`${animate ? "counter-number" : ""}`}>00</div>
               <div className={`${animate ? "counter-number" : ""}`}>01</div>
               <div className={`${animate ? "counter-number" : ""}`}>02</div>

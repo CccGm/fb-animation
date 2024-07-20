@@ -1,4 +1,18 @@
 .rotation {
-    transform: rotate3d(-50, -15, -6, 50deg);
+    transform: rotate3d(-50, -15, -6, 50deg) !important;
+}
 
+.footerRow {
+    animation: footerRow 4s;
+
+}
+
+@keyframes footerRow {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }

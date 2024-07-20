@@ -56,6 +56,29 @@ export const Frame4 = () => {
     setTextAnime(true);
   };
 
+  var lastScrollTop = 0;
+  let scrollElement = document.getElementById("section4");
+
+  // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+  document.addEventListener(
+    "scroll",
+    function () {
+      console.log("object");
+      // or window.addEventListener("scroll"....
+      var st = (window.scrollX = 100 || document.documentElement.scrollTop); // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      console.log(st);
+      if (st > lastScrollTop) {
+        // downscroll code
+        console.log("down scrol");
+      } else if (st < lastScrollTop) {
+        // upscroll
+        console.log("up scrol");
+      } // else was horizontal scroll
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    },
+    false
+  );
+
   return (
     <div
       className="w-full bg-black h-screen relative overflow-hidden snap-start"
@@ -64,43 +87,54 @@ export const Frame4 = () => {
         paddingBottom: "1%",
         paddingLeft: "0.5%",
         paddingRight: "0.5%",
-      }}>
+      }}
+      id="section4">
       {/* cut lines */}
       <div>
         {/* horizantal lines --- */}
         <div>
           <div
-            class={`cut-line-horizontal ${animate ? "line-horizontal-1" : ""}`}
+            className={`cut-line-horizontal ${
+              animate ? "line-horizontal-1" : ""
+            }`}
           />
           <div
-            class={`cut-line-horizontal ${animate ? "line-horizontal-2" : ""}`}
+            className={`cut-line-horizontal ${
+              animate ? "line-horizontal-2" : ""
+            }`}
           />
           <div
-            class={`cut-line-horizontal ${animate ? "line-horizontal-3" : ""}`}
+            className={`cut-line-horizontal ${
+              animate ? "line-horizontal-3" : ""
+            }`}
           />
           <div
-            class={`cut-line-horizontal ${animate ? "line-horizontal-4" : ""}`}
+            className={`cut-line-horizontal ${
+              animate ? "line-horizontal-4" : ""
+            }`}
           />
           <div
-            class={`cut-line-horizontal ${animate ? "line-horizontal-5" : ""}`}
+            className={`cut-line-horizontal ${
+              animate ? "line-horizontal-5" : ""
+            }`}
           />
         </div>
         {/* vertical line || */}
         <div>
           <div
-            class={`${animate ? "cut-line-vertical line-vertical-1" : ""}`}
+            className={`${animate ? "cut-line-vertical line-vertical-1" : ""}`}
           />
           <div
-            class={`${animate ? "cut-line-vertical line-vertical-2" : ""}`}
+            className={`${animate ? "cut-line-vertical line-vertical-2" : ""}`}
           />
           <div
-            class={`${animate ? "cut-line-vertical line-vertical-3" : ""}`}
+            className={`${animate ? "cut-line-vertical line-vertical-3" : ""}`}
           />
           <div
-            class={`${animate ? "cut-line-vertical line-vertical-4" : ""}`}
+            className={`${animate ? "cut-line-vertical line-vertical-4" : ""}`}
           />
           <div
-            class={`${animate ? "cut-line-vertical line-vertical-5" : ""}`}
+            className={`${animate ? "cut-line-vertical line-vertical-5" : ""}`}
           />
         </div>
       </div>
@@ -108,7 +142,7 @@ export const Frame4 = () => {
       {/* hover box */}
       <div className="overflow-hidden">
         <div
-          class={`image-section ${animate ? "box-1" : ""}  ${
+          className={`image-section ${animate ? "box-1" : ""}  ${
             hover
               ? radio
                 ? "hover-effect-blue-left "
@@ -134,10 +168,10 @@ export const Frame4 = () => {
           }}>
           <div className="text" />
         </div>
-        <div class={`image-section ${animate ? "box-2" : ""}`} />
-        <div class={`image-section ${animate ? "box-3" : ""}`} />
+        <div className={`image-section ${animate ? "box-2" : ""}`} />
+        <div className={`image-section ${animate ? "box-3" : ""}`} />
         <div
-          class={`image-section ${animate ? "box-4" : ""} ${
+          className={`image-section ${animate ? "box-4" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-left "
@@ -163,9 +197,9 @@ export const Frame4 = () => {
           }}>
           <div className="text">{radio ? `Video Production` : "Podcasts"}</div>
         </div>
-        <div class={`image-section ${animate ? "box-5" : ""}`} />
+        <div className={`image-section ${animate ? "box-5" : ""}`} />
         <div
-          class={`image-section ${animate ? "box-6" : ""} 
+          className={`image-section ${animate ? "box-6" : ""} 
           ${
             hover
               ? radio
@@ -195,9 +229,9 @@ export const Frame4 = () => {
             {radio ? "Content Strategy" : "Mini Series"}
           </div>
         </div>
-        <div class={`image-section ${animate ? "box-7" : ""}`} />
+        <div className={`image-section ${animate ? "box-7" : ""}`} />
         <div
-          class={`image-section ${animate ? "box-8" : ""} ${
+          className={`image-section ${animate ? "box-8" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-top"
@@ -226,7 +260,7 @@ export const Frame4 = () => {
           </div>
         </div>
         <div
-          class={`image-section ${animate ? "box-9" : ""} ${
+          className={`image-section ${animate ? "box-9" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-right"
@@ -256,10 +290,10 @@ export const Frame4 = () => {
               : " Travel & Lifestyle  Videos"}
           </div>
         </div>
-        <div class={`image-section ${animate ? "box-10" : ""}`} />
-        <div class={`image-section ${animate ? "box-11" : ""}`} />
+        <div className={`image-section ${animate ? "box-10" : ""}`} />
+        <div className={`image-section ${animate ? "box-11" : ""}`} />
         <div
-          class={`image-section ${animate ? "box-12" : ""} ${
+          className={`image-section ${animate ? "box-12" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-top"
@@ -288,7 +322,7 @@ export const Frame4 = () => {
           </div>
         </div>
         <div
-          class={`image-section ${animate ? "box-13" : ""} ${
+          className={`image-section ${animate ? "box-13" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-left"
@@ -316,9 +350,9 @@ export const Frame4 = () => {
             {radio ? "Design Services" : "Music Videos"}
           </div>
         </div>
-        <div class={`image-section ${animate ? "box-14" : ""}`} />
+        <div className={`image-section ${animate ? "box-14" : ""}`} />
         <div
-          class={`image-section ${animate ? "box-15" : ""} ${
+          className={`image-section ${animate ? "box-15" : ""} ${
             hover
               ? radio
                 ? "hover-effect-blue-bottom"

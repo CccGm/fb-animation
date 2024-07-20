@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Emailsvg } from "../../../assets/svg/Emailsvg";
 import { Phonesvg } from "../../../assets/svg/Phonesvg";
 import MumbaiClock from "../../common/MumbaiClock/MumbaiClock";
@@ -6,9 +6,32 @@ import "./Frame10.css";
 import { UaeClock } from "../../common/uaeClock/UaeClock";
 
 export const Frame10 = () => {
+  const animeRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        } else {
+          setAnimate(false);
+        }
+      });
+    });
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+      setAnimate(false);
+    };
+  }, []);
+
   return (
-    <div className="w-full bg-black overflow-hidden snap-start">
-      <div className="flex p-20 justify-between">
+    <div className="w-full bg-black overflow-hidden snap-start ">
+      <div className="flex p-20 justify-between" ref={animeRef}>
         <div className="mt-8">
           <p
             style={{
@@ -113,14 +136,20 @@ export const Frame10 = () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-3 bg-white ">
-        {Array.from({ length: 1000 }, (_, index) => {
-          return (
-            <div key={index}>
-              <div className="w-6 h-9 border-4 -my-2 border-white bg-black rotation" />
-            </div>
-          );
-        })}
+
+      <div
+        className={`flex overflow-hidden items-center h-7 ${
+          animate ? "footerRow" : ""
+        }`}>
+        <div className="flex gap-3 h-fit bg-white">
+          {Array.from({ length: 500 }, (_, index) => {
+            return (
+              <div key={index}>
+                <div className="w-6 h-9 border-4 -my-2 border-white bg-black rotation " />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

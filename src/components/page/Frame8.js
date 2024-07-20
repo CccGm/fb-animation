@@ -68,7 +68,7 @@ export const Frame8 = () => {
           <div className="flex bg-app-blue p-5 contentBlock--two gap-5 h-[300px]">
             {Blue?.map((image, index) => {
               return (
-                <div className="grid grid-flow-row gap-5">
+                <div className="grid grid-flow-row gap-5" key={index}>
                   <div className="flex gap-5">
                     {Array.from({ length: 6 }, (_, index) => {
                       return (
@@ -95,7 +95,7 @@ export const Frame8 = () => {
           <div className="flex bg-app-green p-5 contentBlock--two gap-5 h-[300px]">
             {Green?.map((image, index) => {
               return (
-                <div className="grid grid-flow-row gap-5">
+                <div className="grid grid-flow-row gap-5" key={index}>
                   <div className="flex gap-5">
                     {Array.from({ length: 6 }, (_, index) => {
                       return (
