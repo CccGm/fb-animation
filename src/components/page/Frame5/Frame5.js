@@ -11,15 +11,18 @@ export const Frame5 = () => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setAnimate(true);
-        } else {
-          setAnimate(false);
-        }
-      });
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimate(true);
+          } else {
+            setAnimate(false);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
     const elementsToAnimate = animeRef.current;
     observer.observe(elementsToAnimate);
@@ -31,7 +34,7 @@ export const Frame5 = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black min-h-screen snap-start" ref={animeRef}>
+    <div className="w-full bg-black h-screen snap-start overflow-hidden">
       {/* <div
         className={`h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center ${
           animate ? "popcorn-container-hide" : ""
@@ -63,7 +66,7 @@ export const Frame5 = () => {
         />
       </div> */}
       {/* image screen 1 */}
-      <div className="flex">
+      <div className="flex" ref={animeRef}>
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"
