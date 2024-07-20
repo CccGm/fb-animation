@@ -1,4 +1,3 @@
-import "./App.css";
 import { AppProvider } from "./components/context";
 import { Frame1 } from "./components/page/Frame1/Frame1";
 import { Frame2 } from "./components/page/Frame2";
@@ -14,6 +13,7 @@ import { Test } from "./components/page/Test";
 import { Frame5_A } from "./components/page/Frame5/Frame5_a";
 import { Frame5_B } from "./components/page/Frame5/Frame5_b";
 import { NavMenu } from "./components/common/sliderTab/NavMenu";
+import "./App.css";
 
 function App() {
   return (

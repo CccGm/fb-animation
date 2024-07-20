@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mahel from "../../../assets/images/page5/mahal.png";
 import piano from "../../../assets/images/page5/piano.png";
+import "./Frame5.css";
 
 export const Frame5_A = () => {
   const [hover, setHovere] = useState(false);
+
+  const animeRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        } else {
+          setAnimate(false);
+        }
+      });
+    });
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+      setAnimate(false);
+    };
+  }, []);
+
   return (
     <div className="w-full bg-black min-h-screen snap-start">
-      <div className="flex ease-in-out duration-700 container1">
+      <div className="flex ease-in-out duration-700 " ref={animeRef}>
         <div
           className={`h-fit ${
             hover ? "w-3/4" : "w-1/2"
-          } ease-in-out duration-500 image3`}
+          } ease-in-out duration-500 ${animate ? "imageLeft" : ""}`}
           onMouseEnter={() => setHovere(true)}
           onMouseLeave={() => setHovere(false)}>
           <img src={mahel} alt="mahel" style={{ width: "100%" }} />
@@ -48,7 +73,7 @@ export const Frame5_A = () => {
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"
-          } ease-in-out duration-500 image4`}>
+          } ease-in-out duration-500 ${animate ? "imageRight" : ""}`}>
           <img src={piano} alt="piano" style={{ width: "100%" }} />
           <div className="flex justify-between p-7 items-center">
             <div>

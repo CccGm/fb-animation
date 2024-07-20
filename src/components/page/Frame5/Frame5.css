@@ -18,3 +18,33 @@
         transform: rotate(90deg);
     }
 }
+
+.imageRight {
+    animation: imageLeftIn 1s forwards;
+}
+
+@keyframes imageLeftIn {
+    0% {
+        transform: translate(100%, 100%);
+    }
+
+    100% {
+        transform: translate(0%);
+    }
+
+}
+
+.imageLeft {
+    animation: imageRightIn 1s forwards;
+}
+
+@keyframes imageRightIn {
+    0% {
+        transform: translate(-100%, 100%);
+    }
+
+    100% {
+        transform: translate(0%);
+    }
+
+}

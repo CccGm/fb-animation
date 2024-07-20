@@ -8,31 +8,31 @@ export const Frame5 = () => {
   const [hover, setHovere] = useState(false);
 
   const animeRef = useRef(null);
-  const [animate, setAnimate] = useState(true);
+  const [animate, setAnimate] = useState(false);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         setAnimate(true);
-  //       } else {
-  //         setAnimate(false);
-  //       }
-  //     });
-  //   });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        } else {
+          setAnimate(false);
+        }
+      });
+    });
 
-  //   const elementsToAnimate = animeRef.current;
-  //   observer.observe(elementsToAnimate);
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
 
-  //   return () => {
-  //     observer.unobserve(elementsToAnimate);
-  //     setAnimate(false);
-  //   };
-  // }, []);
+    return () => {
+      observer.unobserve(elementsToAnimate);
+      setAnimate(false);
+    };
+  }, []);
 
   return (
     <div className="w-full bg-black min-h-screen snap-start">
-      <div
+      {/* <div
         className={`h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center ${
           animate ? "popcorn-container-hide" : ""
         }`}>
@@ -61,13 +61,13 @@ export const Frame5 = () => {
           style={{ width: 124, height: 222 }}
           className="popcotn-rotate"
         />
-      </div>
+      </div> */}
       {/* image screen 1 */}
-      <div className="flex ease-in-out duration-700 container1" ref={animeRef}>
+      <div className="flex ease-in-out duration-700" ref={animeRef}>
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"
-          } ease-in-out duration-500 image1`}>
+          } ease-in-out duration-500 ${animate ? "imageLeft" : ""}`}>
           <img src={food} alt="food" style={{ width: "100%" }} />
           <div className="flex justify-between p-7 items-center">
             <div>
@@ -103,7 +103,7 @@ export const Frame5 = () => {
         <div
           className={`h-fit ${
             hover ? "w-3/4" : "w-1/2"
-          } ease-in-out duration-500 image2`}
+          } ease-in-out duration-500 ${animate ? "imageRight" : ""}`}
           onMouseEnter={() => setHovere(true)}
           onMouseLeave={() => setHovere(false)}>
           <img src={murti} alt="murti" style={{ width: "100%" }} />

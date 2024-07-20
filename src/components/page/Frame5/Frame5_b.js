@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import house from "../../../assets/images/page5/house.png";
 import radio from "../../../assets/images/page5/radio.png";
+import "./Frame5.css";
 
 export const Frame5_B = () => {
   const [hover, setHovere] = useState(false);
+
+  const animeRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+        } else {
+          setAnimate(false);
+        }
+      });
+    });
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+      setAnimate(false);
+    };
+  }, []);
+
   return (
     <div className="w-full bg-black min-h-screen snap-start">
-      <div className="flex ease-in-out duration-700 container3">
+      <div className="flex ease-in-out duration-700" ref={animeRef}>
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"
-          } ease-in-out duration-500 image4`}>
+          } ease-in-out duration-500 ${animate ? "imageLeft" : ""}`}>
           <img src={house} alt="house" style={{ width: "100%" }} />
           <div className="flex justify-between p-7 items-center">
             <div>
@@ -46,7 +71,7 @@ export const Frame5_B = () => {
         <div
           className={`h-fit ${
             hover ? "w-3/4" : "w-1/2"
-          } ease-in-out duration-500 image5`}
+          } ease-in-out duration-500 ${animate ? "imageRight" : ""}`}
           onMouseEnter={() => setHovere(true)}
           onMouseLeave={() => setHovere(false)}>
           <img src={radio} alt="radio" style={{ width: "100%" }} />
