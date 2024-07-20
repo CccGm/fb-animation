@@ -30,8 +30,8 @@ export const Frame5_A = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black min-h-screen snap-start">
-      <div className="flex ease-in-out duration-700 " ref={animeRef}>
+    <div className="w-full bg-black min-h-screen snap-start" ref={animeRef}>
+      <div className="flex">
         <div
           className={`h-fit ${
             hover ? "w-3/4" : "w-1/2"

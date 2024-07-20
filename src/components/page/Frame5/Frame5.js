@@ -31,7 +31,7 @@ export const Frame5 = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black min-h-screen snap-start">
+    <div className="w-full bg-black min-h-screen snap-start" ref={animeRef}>
       {/* <div
         className={`h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center ${
           animate ? "popcorn-container-hide" : ""
@@ -63,7 +63,7 @@ export const Frame5 = () => {
         />
       </div> */}
       {/* image screen 1 */}
-      <div className="flex ease-in-out duration-700" ref={animeRef}>
+      <div className="flex">
         <div
           className={`h-fit ${
             hover ? "w-1/2" : "w-3/4"

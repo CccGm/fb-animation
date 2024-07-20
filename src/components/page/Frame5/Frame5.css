@@ -20,10 +20,10 @@
 }
 
 .imageRight {
-    animation: imageLeftIn 1s forwards;
+    animation: imageRightIn 1s forwards;
 }
 
-@keyframes imageLeftIn {
+@keyframes imageRightIn {
     0% {
         transform: translate(100%, 100%);
     }
@@ -35,10 +35,10 @@
 }
 
 .imageLeft {
-    animation: imageRightIn 1s forwards;
+    animation: imageLeftIn 1s forwards;
 }
 
-@keyframes imageRightIn {
+@keyframes imageLeftIn {
     0% {
         transform: translate(-100%, 100%);
     }
