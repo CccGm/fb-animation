@@ -38,6 +38,10 @@
     padding-right: 0px;
 }
 
+.contentBlock--three:last-of-type {
+    margin-right: 8px;
+}
+
 ::-webkit-scrollbar {
     display: none
 }

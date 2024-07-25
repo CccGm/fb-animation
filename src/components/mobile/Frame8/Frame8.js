@@ -42,7 +42,7 @@ export const MFrame8 = () => {
   ];
   return (
     <div className="w-full bg-black h-screen snap-start overflow-hidden ">
-      <div className="pt-20 pl-5">
+      <div className="pt-10 pl-5">
         <p
           className=" underline"
           style={{
@@ -62,7 +62,7 @@ export const MFrame8 = () => {
         </p>
       </div>
 
-      <div className="rotate-[4deg] overflow-hidden mt-24">
+      <div className="rotate-[4deg] overflow-hidden mt-10">
         <InfiniteLooper speed="20" direction="right">
           <div className="flex bg-app-blue p-3 contentBlock--two gap-2 h-[180px]">
             {Blue?.map((image, index) => {

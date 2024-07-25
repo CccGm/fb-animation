@@ -19,7 +19,7 @@ import img15 from "../../../assets/images/page7/Rectangle 147.png";
 export const MFrame7 = () => {
   return (
     <div className="w-full bg-black h-screen py-8 snap-start overflow-hidden">
-      <div className="pt-10 pl-5">
+      <div className="pl-5">
         <p
           className="underline"
           style={{
@@ -38,219 +38,222 @@ export const MFrame7 = () => {
           CREATORS
         </p>
       </div>
-      <div className="rotate-180 my-8  h-fit">
-        <InfiniteLooper speed="10" direction="right">
-          <div className="flex gap-3 contentBlock--one">
-            <div className="h-3 border border-app-yellow" />
-            <div className="h-3 border border-app-yellow" />
-            <div className="h-4 border border-app-yellow" />
-            <div className="h-4 border border-app-yellow" />
-            <div className="h-5 border border-app-yellow" />
-            <div className="h-6 border border-app-yellow" />
-            <div className="h-6 border border-app-yellow" />
-            <div className="h-7 border border-app-yellow" />
-            <div className="h-8 border border-app-yellow" />
-            <div className="h-8 border border-app-yellow" />
-            <div className="h-9 border border-app-yellow" />
-            <div className="h-9 border border-app-yellow" />
-            <div className="h-8 border border-app-yellow" />
-            <div className="h-7 border border-app-yellow" />
-            <div className="h-6 border border-app-yellow" />
-            <div className="h-6 border border-app-yellow" />
-            <div className="h-5 border border-app-yellow" />
-            <div className="h-4 border border-app-yellow" />
-            <div className="h-4 border border-app-yellow" />
-            <div className="h-3 border border-app-yellow" />
-            <div className="h-3 border border-app-yellow" />
+      <div className="flex justify-end w-full">
+        <div className="rotate-180 mb-3 w-2/3 h-fit">
+          <InfiniteLooper speed="10" direction="right">
+            <div className="flex gap-3 contentBlock--one">
+              <div className="h-3 border border-app-yellow" />
+              <div className="h-3 border border-app-yellow" />
+              <div className="h-4 border border-app-yellow" />
+              <div className="h-4 border border-app-yellow" />
+              <div className="h-5 border border-app-yellow" />
+              <div className="h-6 border border-app-yellow" />
+              <div className="h-6 border border-app-yellow" />
+              <div className="h-7 border border-app-yellow" />
+              <div className="h-8 border border-app-yellow" />
+              <div className="h-8 border border-app-yellow" />
+              <div className="h-9 border border-app-yellow" />
+              <div className="h-9 border border-app-yellow" />
+              <div className="h-8 border border-app-yellow" />
+              <div className="h-7 border border-app-yellow" />
+              <div className="h-6 border border-app-yellow" />
+              <div className="h-6 border border-app-yellow" />
+              <div className="h-5 border border-app-yellow" />
+              <div className="h-4 border border-app-yellow" />
+              <div className="h-4 border border-app-yellow" />
+              <div className="h-3 border border-app-yellow" />
+              <div className="h-3 border border-app-yellow" />
+            </div>
+          </InfiniteLooper>
+        </div>
+      </div>
+      <div className="flex w-full -mb-12 mt-10">
+        <InfiniteLooper speed="20" direction="left">
+          <div className="flex gap-2 contentBlock--three">
+            <img
+              src={img15}
+              alt="scroll pic"
+              className="pt-24 pb-0"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img12}
+              alt="scroll pic"
+              className="pt-20 pb-4"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img11}
+              alt="scroll pic"
+              className="pt-16 pb-8"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img1}
+              alt="scroll pic"
+              className="pt-12 pb-12"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img2}
+              alt="scroll pic"
+              className="pt-8 pb-16"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img3}
+              alt="scroll pic"
+              className="pt-5 pb-[70px]"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img4}
+              alt="scroll pic"
+              className="pt-2 pb-[82px]"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img5}
+              alt="scroll pic"
+              className="pt-0 pb-24"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img6}
+              alt="scroll pic"
+              className="pt-2 pb-[82px]"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img7}
+              alt="scroll pic"
+              className="pt-5 pb-[70px]"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img8}
+              alt="scroll pic"
+              className="pt-8 pb-16"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img9}
+              alt="scroll pic"
+              className="pt-12 pb-12"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img10}
+              alt="scroll pic"
+              className="pt-16 pb-8"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img13}
+              alt="scroll pic"
+              className="pt-20 pb-4"
+              style={{ width: 70, height: 240 }}
+            />
+            <img
+              src={img14}
+              alt="scroll pic"
+              className="pt-24 pb-0"
+              style={{ width: 70, height: 240 }}
+            />
           </div>
         </InfiniteLooper>
       </div>
-
       <InfiniteLooper speed="20" direction="left">
-        <div className="flex gap-3 contentBlock--one">
-          <img
-            src={img15}
-            alt="scroll pic"
-            className="pt-24 pb-0"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img12}
-            alt="scroll pic"
-            className="pt-20 pb-4"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img11}
-            alt="scroll pic"
-            className="pt-16 pb-8"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img1}
-            alt="scroll pic"
-            className="pt-12 pb-12"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img2}
-            alt="scroll pic"
-            className="pt-8 pb-16"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img3}
-            alt="scroll pic"
-            className="pt-5 pb-[70px]"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img4}
-            alt="scroll pic"
-            className="pt-2 pb-[82px]"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img5}
-            alt="scroll pic"
-            className="pt-0 pb-24"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img6}
-            alt="scroll pic"
-            className="pt-2 pb-[82px]"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img7}
-            alt="scroll pic"
-            className="pt-5 pb-[70px]"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img8}
-            alt="scroll pic"
-            className="pt-8 pb-16"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img9}
-            alt="scroll pic"
-            className="pt-12 pb-12"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img10}
-            alt="scroll pic"
-            className="pt-16 pb-8"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img13}
-            alt="scroll pic"
-            className="pt-20 pb-4"
-            style={{ width: 80, height: 260 }}
-          />
-          <img
-            src={img14}
-            alt="scroll pic"
-            className="pt-24 pb-0"
-            style={{ width: 80, height: 260 }}
-          />
-        </div>
-      </InfiniteLooper>
-      <InfiniteLooper speed="20" direction="left">
-        <div className="flex gap-3 contentBlock--one">
+        <div className="flex gap-2 contentBlock--three">
           <img
             src={img1}
             alt="scroll pic"
             className="pt-24 pb-0"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img2}
             alt="scroll pic"
             className="pt-20 pb-4"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img3}
             alt="scroll pic"
             className="pt-16 pb-8"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img4}
             alt="scroll pic"
             className="pt-12 pb-12"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img5}
             alt="scroll pic"
             className="pt-8 pb-16"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img6}
             alt="scroll pic"
             className="pt-5 pb-[70px]"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img7}
             alt="scroll pic"
             className="pt-2 pb-[82px]"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img8}
             alt="scroll pic"
             className="pt-0 pb-24"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img9}
             alt="scroll pic"
             className="pt-2 pb-[82px]"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img10}
             alt="scroll pic"
             className="pt-5 pb-[70px]"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img11}
             alt="scroll pic"
             className="pt-8 pb-16"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img12}
             alt="scroll pic"
             className="pt-12 pb-12"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img13}
             alt="scroll pic"
             className="pt-16 pb-8"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img14}
             alt="scroll pic"
             className="pt-20 pb-4"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
           <img
             src={img15}
             alt="scroll pic"
             className="pt-24 pb-0"
-            style={{ width: 80, height: 260 }}
+            style={{ width: 70, height: 240 }}
           />
         </div>
       </InfiniteLooper>

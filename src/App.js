@@ -20,15 +20,23 @@ import "./App.css";
 import { Test } from "./components/page/Test";
 
 // mobile view
+import { MFrame5_a } from "./components/mobile/Frame5/Frame5_a";
+import { MFrame5_b } from "./components/mobile/Frame5/Frame5_b";
+import { MFrame5_c } from "./components/mobile/Frame5/Frame5_c";
+import { MFrame6 } from "./components/mobile/Frame6/Frame6";
+import { MFrame7 } from "./components/mobile/Frame7/Frame7";
 import { MFrame8 } from "./components/mobile/Frame8/Frame8";
 import { MFrame9 } from "./components/mobile/Frame9/Frame9";
 import { MFrame10 } from "./components/mobile/Frame10/Frame10";
-import { MFrame7 } from "./components/mobile/Frame7/Frame7";
 
 const isMobile = (rdd.isMobile = true);
 function App() {
   return isMobile ? (
     <div className="containers">
+      <MFrame5_a />
+      <MFrame5_b />
+      <MFrame5_c />
+      <MFrame6 />
       <MFrame7 />
       <MFrame8 />
       <MFrame9 />

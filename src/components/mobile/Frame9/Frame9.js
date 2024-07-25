@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import kerfin from "../../../assets/images/page9/Kerfin7_NEA_2530 2.png";
 import { Sendsvg } from "../../../assets/svg/Sendsvg";
 import { AnimatedInput } from "../../common/AnimatedInput/app";
@@ -10,24 +10,25 @@ export const MFrame9 = () => {
   const [reachMe, setReachMe] = useState("");
 
   return (
-    <div className="w-full bg-app-purple h-screen overflow-hidden snap-start  px-5 py-10">
-      <div className="flex gap-0">
+    <div className="w-full bg-app-purple h-screen overflow-scroll snap-start  px-5 py-6">
+      <div className="grid grid-cols-2 h-fit">
         <div>
-          <p style={{ color: "#C1FE00", fontSize: 14, fontFamily: "Feeling" }}>
+          <p style={{ color: "#C1FE00", fontSize: 12, fontFamily: "Feeling" }}>
             Let’s Collaborate
           </p>
           <p
             style={{
               color: "#ffffff",
-              fontSize: 64,
+              fontSize: 44,
               fontFamily: "Geometric",
               marginTop: 10,
+              lineHeight: 1.2,
             }}>
-            JUST SEND IT
+            JUST <br /> SEND <br /> IT
           </p>
         </div>
-        <div>
-          <img src={kerfin} alt="kerfin" />
+        <div className=" flex justify-center">
+          <img src={kerfin} alt="kerfin" style={{ height: 220 }} />
         </div>
       </div>
       {/* input */}
@@ -36,7 +37,7 @@ export const MFrame9 = () => {
           <p
             style={{
               color: "#ffffff",
-              fontSize: 16,
+              fontSize: 14,
               fontFamily: "Poppins",
             }}>
             Hey, I am
@@ -47,8 +48,8 @@ export const MFrame9 = () => {
             placeholder="my name"
             onChange={(e) => setName(e.target.value)}
             style={{
-              height: 36,
-              fontSize: 16,
+              height: 32,
+              fontSize: 14,
             }}
           />
         </div>
@@ -56,7 +57,7 @@ export const MFrame9 = () => {
           <p
             style={{
               color: "#ffffff",
-              fontSize: 16,
+              fontSize: 14,
               fontFamily: "Poppins",
             }}>
             and I am looking for
@@ -67,8 +68,8 @@ export const MFrame9 = () => {
             placeholder="my message"
             onChange={(e) => setLooking(e.target.value)}
             style={{
-              height: 36,
-              fontSize: 16,
+              height: 32,
+              fontSize: 14,
             }}
           />
         </div>
@@ -76,7 +77,7 @@ export const MFrame9 = () => {
           <p
             style={{
               color: "#ffffff",
-              fontSize: 16,
+              fontSize: 14,
               fontFamily: "Poppins",
             }}>
             You can connect me on
@@ -87,8 +88,8 @@ export const MFrame9 = () => {
             placeholder="my email"
             onChange={(e) => setContact(e.target.value)}
             style={{
-              height: 36,
-              fontSize: 16,
+              height: 32,
+              fontSize: 14,
             }}
           />
         </div>
@@ -96,7 +97,7 @@ export const MFrame9 = () => {
           <p
             style={{
               color: "#ffffff",
-              fontSize: 16,
+              fontSize: 14,
               fontFamily: "Poppins",
             }}>
             or reach me at
@@ -108,15 +109,15 @@ export const MFrame9 = () => {
             onChange={(e) => setReachMe(e.target.value)}
             style={{
               width: "auto",
-              height: 36,
-              fontSize: 16,
+              height: 32,
+              fontSize: 14,
             }}
           />
 
           <p
             style={{
               color: "#ffffff",
-              fontSize: 16,
+              fontSize: 14,
               fontFamily: "Poppins",
             }}>
             It will be a great unfold!
@@ -124,10 +125,10 @@ export const MFrame9 = () => {
         </div>
       </div>
       {/* button */}
-      <div className="flex justify-end mt-5 w-full">
-        <div className="bg-pulse p-2 rounded-full bg-app-offBlack">
+      <div className="flex justify-end mt-2 w-full">
+        <div className="bg-pulse p-1 rounded-full bg-app-offBlack">
           <button
-            className="flex gap-2 bg-app-lightGreen w-24 h-9 justify-center rounded-full text-app-purple text-base items-center pulseBb"
+            className="flex gap-2 bg-app-lightGreen w-24 h-8 justify-center rounded-full text-app-purple text-base items-center pulseBb"
             style={{ fontFamily: "Poppins" }}>
             Send <Sendsvg isMobile />
           </button>

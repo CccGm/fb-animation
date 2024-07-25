@@ -1,9 +1,11 @@
 .popcorn-container-hide {
+    opacity: 1;
     animation: hidepopcoen 2s 1s forwards;
 }
 
 @keyframes hidepopcoen {
     to {
+        opacity: 0;
         height: 0px;
     }
 }
