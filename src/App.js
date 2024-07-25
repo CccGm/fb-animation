@@ -1,5 +1,4 @@
-import * as rdd from "react-device-detect";
-// import { isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 // web view
 import { Frame1 } from "./components/page/Frame1/Frame1";
@@ -29,7 +28,7 @@ import { MFrame8 } from "./components/mobile/Frame8/Frame8";
 import { MFrame9 } from "./components/mobile/Frame9/Frame9";
 import { MFrame10 } from "./components/mobile/Frame10/Frame10";
 
-const isMobile = (rdd.isMobile = true);
+// const isMobile = (rdd.isMobile = true);
 function App() {
   return isMobile ? (
     <div className="containers">
