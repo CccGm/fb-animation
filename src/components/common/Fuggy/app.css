@@ -1,0 +1,22 @@
+.fuggyAnime1 {
+    transform: translateX(100%);
+    animation: fuggyAnime1 1s 1s forwards;
+}
+
+@keyframes fuggyAnime1 {
+    to {
+        transform: translateX(0%);
+    }
+
+}
+
+.fuggyAnime4 {
+    transform: translateY(-100%);
+    animation: fuggyAnime4 2s 3s forwards;
+}
+
+@keyframes fuggyAnime4 {
+    to {
+        transform: translateY(0);
+    }
+}

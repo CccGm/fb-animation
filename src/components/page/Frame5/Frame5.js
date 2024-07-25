@@ -3,8 +3,16 @@ import popcorn from "../../../assets/images/page5/popcorn.png";
 import food from "../../../assets/images/page5/food.png";
 import murti from "../../../assets/images/page5/murti.png";
 import "./Frame5.css";
+import { useAppContext } from "../../context";
 
 export const Frame5 = () => {
+  const {
+    setSlidertabColor,
+    setSliderAnimation,
+    setSliderShow,
+    setFuggyAnimation,
+    setFuggyHide,
+  } = useAppContext();
   const [hover, setHovere] = useState(false);
 
   const animeRef = useRef(null);
@@ -16,8 +24,14 @@ export const Frame5 = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setAnimate(true);
+            setSlidertabColor("#ED1D24");
+            setSliderAnimation("frame5Slider");
+            setSliderShow(true);
+            setFuggyAnimation("");
+            setFuggyHide(true);
           } else {
             setAnimate(false);
+            // setSliderAnimation("");
           }
         });
       },
@@ -35,7 +49,7 @@ export const Frame5 = () => {
 
   return (
     <div className="w-full bg-black h-screen snap-start overflow-hidden">
-      {/* <div
+      <div
         className={`h-[412px] w-full bg-app-red flex pl-40 pr-56 justify-between overflow-hidden items-center ${
           animate ? "popcorn-container-hide" : ""
         }`}>
@@ -62,9 +76,9 @@ export const Frame5 = () => {
           src={popcorn}
           alt="popcorn"
           style={{ width: 124, height: 222 }}
-          className="popcotn-rotate"
+          className={`${animate ? "popcotn-rotate" : ""}`}
         />
-      </div> */}
+      </div>
       {/* image screen 1 */}
       <div className="flex" ref={animeRef}>
         <div

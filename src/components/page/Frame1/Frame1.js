@@ -1,20 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import Switch from "../../common/switch/app";
 import cartoon from "../../../assets/images/page1/Kerfin7_NEA_2525 1.png";
-import { SliderTab } from "../../common/sliderTab/app";
 import light from "../../../assets/images/page1/Lights.png";
 import camera from "../../../assets/images/page1/Camera.png";
 import action from "../../../assets/images/page1/Clapper.png";
 import "./Frame1.css";
+import { useAppContext } from "../../context";
 
 export const Frame1 = () => {
+  const {
+    setSlidertabColor,
+    setSliderShow,
+    bore,
+    setBore,
+    setFuggyRotate,
+    setFuggyColor,
+  } = useAppContext();
   const images = [action, light, camera];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const animeRef = useRef(null);
   const [animate, setAnimate] = useState(false);
-
-  const [bore, setBore] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,34 +29,11 @@ export const Frame1 = () => {
 
     setTimeout(() => {
       setBore(false);
-      // setRotateFuggy(true);
+      setFuggyRotate(true);
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("in-view");
-  //       } else {
-  //         entry.target.classList.remove("in-view");
-  //       }
-  //     });
-  //   });
-
-  //   const elementsToAnimate = [
-  //     section1Ref.current,
-  //     section2Ref.current,
-  //     animatedBoxRef.current,
-  //   ];
-  //   elementsToAnimate.forEach((element) => observer.observe(element));
-
-  //   return () => {
-  //     elementsToAnimate.forEach((element) => observer.unobserve(element));
-  //   };
-  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -58,6 +41,9 @@ export const Frame1 = () => {
         if (entry.isIntersecting) {
           // entry.target.classList.add("in-view");
           setAnimate(true);
+          setSlidertabColor("#ED1D24");
+          setFuggyColor("#ED1D24");
+          setSliderShow(true);
         }
         // else {
         // entry.target.classList.remove("in-view");
@@ -74,39 +60,11 @@ export const Frame1 = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         setInView(true);
-  //         observer.disconnect();
-  //       }
-  //     },
-  //     { threshold: 0.1 }
-  //   );
-
-  //   if (divRef.current) {
-  //     observer.observe(divRef.current);
-  //   }
-
-  //   setTimeout(() => {
-  //     setBore(false);
-  //     setRotateFuggy(true);
-  //   }, 3000);
-
-  //   return () => {
-  //     if (divRef.current) {
-  //       observer.unobserve(divRef.current);
-  //     }
-  //   };
-  // }, []);
-
   return (
     <div
-      className={`w-full bg-black min-h-screen p-2 overflow-hidden relative snap-start ${
+      className={`w-full bg-black h-screen p-2 overflow-hidden relative snap-start  ${
         bore ? "grayscale" : "grayscale-0"
-      }`}
-      ref={animeRef}>
+      }`}>
       {/* <div className="flex h-fit w-full justify-end">
         <div
           style={{
@@ -150,7 +108,9 @@ export const Frame1 = () => {
       </div>
 
       <div className="py-5 pl-40 mt-[350px] ">
-        <p style={{ color: "#ED1D24", fontFamily: "Feeling", fontSize: 28 }}>
+        <p
+          style={{ color: "#ED1D24", fontFamily: "Feeling", fontSize: 28 }}
+          ref={animeRef}>
           <span style={{ color: currentIndex === 1 ? "#ffffff" : "#ED1D24" }}>
             lights
           </span>
@@ -165,7 +125,6 @@ export const Frame1 = () => {
           </span>
         </p>
         <p
-          ref={animeRef}
           className={`translate-y-start transition-transform1 ${
             animate ? "translate-y-0" : ""
           }`}
@@ -186,7 +145,7 @@ export const Frame1 = () => {
         </div>
       </div>
 
-      <div className="flex justify-end w-full pb-10 pr-10">
+      <div className="flex justify-end w-full pb-10 pr-10 boreSwitch">
         <Switch bore={bore} setBore={setBore} />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { InfiniteLooper } from "../common/imageloopHorizantal/app";
 import brand1 from "../../assets/images/page8/Brand 1.png";
 import brand2 from "../../assets/images/page8/Brand 2.png";
@@ -11,8 +11,34 @@ import brand8 from "../../assets/images/page8/Brand 8.png";
 import brand9 from "../../assets/images/page8/Brand 9.png";
 import brand10 from "../../assets/images/page8/Brand 10.png";
 import brand11 from "../../assets/images/page8/Brand 11.png";
+import { useAppContext } from "../context";
 
 export const Frame8 = () => {
+  const { setSliderShow, setSliderAnimation, setFuggyColor, setFuggyRotate } =
+    useAppContext();
+  const animeRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSliderShow(false);
+            setFuggyRotate(false);
+            setFuggyColor("#FF1F9F");
+            setSliderAnimation("");
+          }
+        });
+      },
+      { threshold: 0.01 }
+    );
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+    };
+  }, []);
   const Blue = [
     brand1,
     brand2,
@@ -42,7 +68,7 @@ export const Frame8 = () => {
   ];
 
   return (
-    <div className="w-full bg-black min-h-screen snap-start">
+    <div className="w-full bg-black h-screen snap-start overflow-hidden">
       {/* <div className="flex justify-end h-fit">
         <div
           style={{
@@ -63,7 +89,7 @@ export const Frame8 = () => {
           </p>
         </div>
       </div> */}
-      <div className="rotate-[4deg] overflow-hidden">
+      <div className="rotate-[4deg] overflow-hidden" ref={animeRef}>
         <InfiniteLooper speed="20" direction="right">
           <div className="flex bg-app-blue p-5 contentBlock--two gap-5 h-[300px]">
             {Blue?.map((image, index) => {

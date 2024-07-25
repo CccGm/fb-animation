@@ -4,8 +4,10 @@ import { Phonesvg } from "../../../assets/svg/Phonesvg";
 import MumbaiClock from "../../common/MumbaiClock/MumbaiClock";
 import "./Frame10.css";
 import { UaeClock } from "../../common/uaeClock/UaeClock";
+import { useAppContext } from "../../context";
 
 export const Frame10 = () => {
+  const { setSliderShow, setSliderAnimation, setFuggyHide } = useAppContext();
   const animeRef = useRef(null);
   const [animate, setAnimate] = useState(false);
 
@@ -14,6 +16,9 @@ export const Frame10 = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setAnimate(true);
+          setSliderShow(false);
+          setSliderAnimation("");
+          setFuggyHide(true);
         } else {
           setAnimate(false);
         }
@@ -31,7 +36,7 @@ export const Frame10 = () => {
 
   return (
     <div className="w-full bg-black overflow-hidden snap-start ">
-      <div className="flex p-20 justify-between" ref={animeRef}>
+      <div className="flex p-20 justify-between">
         <div className="mt-8">
           <p
             style={{
@@ -39,7 +44,8 @@ export const Frame10 = () => {
               fontFamily: "Feeling",
               fontSize: 24,
               textDecoration: "underline",
-            }}>
+            }}
+            ref={animeRef}>
             FuzzyBox
           </p>
           <p

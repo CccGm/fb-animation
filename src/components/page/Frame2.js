@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useAppContext } from "../context";
 
 export const Frame2 = () => {
-  const { setSlidertabColor } = useAppContext();
+  const { setSlidertabColor, setSliderShow, setFuggyColor, setFuggyRotate } =
+    useAppContext();
+  const animeRef = useRef(null);
   const LinesData = [
     { name: "we are believers Copy", show: false },
     { name: "fablers", show: true },
@@ -21,30 +23,27 @@ export const Frame2 = () => {
   ];
 
   useEffect(() => {
-    setSlidertabColor("#EEF51B");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setSlidertabColor("#EEF51B");
+          setFuggyColor("#EEF51B");
+          setSliderShow(true);
+          setFuggyRotate(true);
+        }
+      });
+    });
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+    };
   }, []);
 
   return (
     <div className="w-full bg-app-pink h-screen snap-start">
-      {/* <div
-        style={{
-          width: 200,
-          height: 142,
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-        className="fixed top-0 right-0">
-        <p
-          className="rotate-[20deg] underline"
-          style={{
-            color: "#EEF51B",
-            fontFamily: "Feeling",
-            fontSize: 24,
-          }}>
-          FuzzyBox
-        </p>
-      </div> */}
       <div className="grid grid-cols-2 h-full relative">
         <div className="flex justify-center items-center">
           <p
@@ -52,7 +51,8 @@ export const Frame2 = () => {
               color: "#ffffff",
               fontSize: 128,
               fontFamily: "Geometric",
-            }}>
+            }}
+            ref={animeRef}>
             WE LIVE
             <br /> STORIES
           </p>

@@ -3,7 +3,7 @@
 }
 
 .footerRow {
-    animation: footerRow 4s;
+    animation: footerRow 1.5s ease-in-out;
 
 }
 

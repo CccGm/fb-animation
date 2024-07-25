@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import mahel from "../../../assets/images/page5/mahal.png";
 import piano from "../../../assets/images/page5/piano.png";
 import "./Frame5.css";
+import { useAppContext } from "../../context";
 
 export const Frame5_A = () => {
+  const { setSlidertabColor, setSliderShow } = useAppContext();
   const [hover, setHovere] = useState(false);
 
   const animeRef = useRef(null);
@@ -15,6 +17,8 @@ export const Frame5_A = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setAnimate(true);
+            setSlidertabColor("#FFA616");
+            setSliderShow(true);
           } else {
             setAnimate(false);
           }

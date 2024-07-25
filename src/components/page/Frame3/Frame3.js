@@ -1,8 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import karfin from "../../../assets/images/page3/Kerfin7_NEA_2526 2.png";
 import "./Frame3.css";
+import { useAppContext } from "../../context";
 
 export const Frame3 = () => {
+  const {
+    setSlidertabColor,
+    setSliderShow,
+    setFuggyColor,
+    setFuggyRotate,
+    setFuggyAnimation,
+  } = useAppContext();
   const animeRef = useRef(null);
   const [animate, setAnimate] = useState(false);
 
@@ -11,6 +19,11 @@ export const Frame3 = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setAnimate(true);
+          setSlidertabColor("#00E94F");
+          setFuggyColor("#00E94F");
+          setFuggyRotate(false);
+          setSliderShow(true);
+          setFuggyAnimation("");
         } else {
           setAnimate(false);
         }
@@ -27,7 +40,7 @@ export const Frame3 = () => {
   }, []);
 
   return (
-    <div className="w-full relative bg-black min-h-screen snap-start">
+    <div className="w-full relative bg-black h-screen snap-start overflow-hidden">
       <div className="p-24 absolute  w-full h-full overflow-hidden">
         <div className="border flex h-full relative w-full">
           {/* border */}

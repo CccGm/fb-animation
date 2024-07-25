@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./app.css";
+import { useAppContext } from "../../context";
 
 export const SliderTab = ({ show, closeSidebar }) => {
   const [currentPosition, setCurrentPosition] = useState({
@@ -21,6 +22,7 @@ export const SliderTab = ({ show, closeSidebar }) => {
 };
 
 const SlideTabs = ({ newPosition, setNewPoisiton, close }) => {
+  const { slidertabColor } = useAppContext();
   const [position, setPosition] = useState({
     left: 0,
     width: 0,
@@ -51,7 +53,7 @@ const SlideTabs = ({ newPosition, setNewPoisiton, close }) => {
         Contact
       </Tab>
 
-      <Cursor position={position} />
+      <Cursor position={position} color={slidertabColor} />
     </ul>
   );
 };
@@ -81,13 +83,14 @@ const Tab = ({ children, setPosition, position }) => {
   );
 };
 
-const Cursor = ({ position }) => {
+const Cursor = ({ position, color }) => {
   return (
     <motion.li
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-app-red md:h-12"
+      className="absolute z-0 h-7 rounded-full md:h-12"
+      style={{ backgroundColor: color }}
     />
   );
 };

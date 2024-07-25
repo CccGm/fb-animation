@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import phone from "../../../assets/images/page6/phone.png";
 import movie from "../../../assets/images/page6/movies cd.png";
 import camera from "../../../assets/images/page6/camera man.png";
 import lady from "../../../assets/images/page6/ladie.png";
 import "./Frame6.css";
+import { useAppContext } from "../../context";
 
 export const Frame6 = () => {
+  const { setSliderShow, setSliderAnimation, setFuggyHide } = useAppContext();
+  const animeRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setSliderShow(false);
+          setFuggyHide(true);
+          setSliderAnimation("");
+        }
+      });
+    });
+
+    const elementsToAnimate = animeRef.current;
+    observer.observe(elementsToAnimate);
+
+    return () => {
+      observer.unobserve(elementsToAnimate);
+    };
+  }, []);
+
   return (
-    <div className="w-full bg-black grid grid-cols-2 gap-3 h-screen snap-start">
+    <div className="w-full bg-black grid grid-cols-2 gap-3 h-screen snap-start overflow-hidden">
       <div className="grid grid-cols-2 h-screen gap-3">
         <div className="overflow-hidden">
           <div className="scroll-container">
@@ -48,7 +70,8 @@ export const Frame6 = () => {
               color: "#5A0FE8",
               fontFamily: "Feeling",
               fontSize: 24,
-            }}>
+            }}
+            ref={animeRef}>
             FuzzyBox
           </p>
           <p

@@ -4,8 +4,18 @@ import persons from "../../../assets/images/page4/persons.png";
 import karefin from "../../../assets/images/page3/Kerfin7_NEA_2526 2.png";
 import CustomizedSwitches from "../../common/switchSpeaker/app";
 import "./frame4.css";
+import { useAppContext } from "../../context";
 
 export const Frame4 = () => {
+  const {
+    setSlidertabColor,
+    setSliderAnimation,
+    setSliderShow,
+    setFuggyColor,
+    setFuggyRotate,
+    setFuggyAnimation,
+    setFuggyHide,
+  } = useAppContext();
   const [radio, setRadio] = useState(false);
   const [startHover, setStartHover] = useState(false);
   const [hover, setHover] = useState(false);
@@ -20,6 +30,13 @@ export const Frame4 = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setAnimate(true);
+          setSliderAnimation("frame4Slider");
+          setSliderShow(true);
+          setSlidertabColor("#FFA616");
+          setFuggyColor("#FFA616");
+          setFuggyRotate(true);
+          setFuggyHide(false);
+          setFuggyAnimation("fuggyAnime4");
           setTimeout(() => {
             setStartHover(true);
           }, 3000);
@@ -31,6 +48,7 @@ export const Frame4 = () => {
             setRadio(false);
             setStartHover(false);
             setTextAnime(false);
+            // setSliderAnimation("");
           }, 500);
         }
       });
@@ -54,6 +72,7 @@ export const Frame4 = () => {
     setHoverOut(false);
     setRadio(!radio);
     setTextAnime(true);
+    setFuggyColor(radio ? "#FFA616" : "#0093FF");
   };
 
   var lastScrollTop = 0;

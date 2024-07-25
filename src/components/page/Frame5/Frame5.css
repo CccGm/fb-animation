@@ -1,5 +1,5 @@
 .popcorn-container-hide {
-    animation: hidepopcoen 2s forwards;
+    animation: hidepopcoen 2s 1s forwards;
 }
 
 @keyframes hidepopcoen {
@@ -10,7 +10,7 @@
 
 .popcotn-rotate {
     transform: rotate(0deg);
-    animation: rotatePop 1s forwards;
+    animation: rotatePop 1.5s 1s forwards;
 }
 
 @keyframes rotatePop {
