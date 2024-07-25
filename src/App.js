@@ -1,27 +1,37 @@
-// import * as rdd from "react-device-detect";
-import { isMobile } from "react-device-detect";
+import * as rdd from "react-device-detect";
+// import { isMobile } from "react-device-detect";
+
+// web view
 import { Frame1 } from "./components/page/Frame1/Frame1";
 import { Frame2 } from "./components/page/Frame2";
 import { Frame3 } from "./components/page/Frame3/Frame3";
 import { Frame4 } from "./components/page/Frame4/Frame4";
 import { Frame5 } from "./components/page/Frame5/Frame5";
+import { Frame5_A } from "./components/page/Frame5/Frame5_a";
+import { Frame5_B } from "./components/page/Frame5/Frame5_b";
 import { Frame6 } from "./components/page/Frame6/Frame6";
 import { Frame7 } from "./components/page/Frame7";
 import { Frame8 } from "./components/page/Frame8";
 import { Frame9 } from "./components/page/Frame9/Frame9";
 import { Frame10 } from "./components/page/Frame10/Frame10";
-import { Test } from "./components/page/Test";
-import { Frame5_A } from "./components/page/Frame5/Frame5_a";
-import { Frame5_B } from "./components/page/Frame5/Frame5_b";
 import { NavMenu } from "./components/common/sliderTab/NavMenu";
-import "./App.css";
 import { FuggyText } from "./components/common/Fuggy/app";
-import { MFrame10 } from "./components/mobile/Frame10/Frame10";
+import "./App.css";
+import { Test } from "./components/page/Test";
 
-// const isMobile = (rdd.isMobile = true);
+// mobile view
+import { MFrame8 } from "./components/mobile/Frame8/Frame8";
+import { MFrame9 } from "./components/mobile/Frame9/Frame9";
+import { MFrame10 } from "./components/mobile/Frame10/Frame10";
+import { MFrame7 } from "./components/mobile/Frame7/Frame7";
+
+const isMobile = (rdd.isMobile = true);
 function App() {
   return isMobile ? (
-    <div className="flex h-full">
+    <div className="containers">
+      <MFrame7 />
+      <MFrame8 />
+      <MFrame9 />
       <MFrame10 />
     </div>
   ) : (
