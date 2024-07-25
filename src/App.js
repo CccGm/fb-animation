@@ -1,3 +1,5 @@
+// import * as rdd from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import { Frame1 } from "./components/page/Frame1/Frame1";
 import { Frame2 } from "./components/page/Frame2";
 import { Frame3 } from "./components/page/Frame3/Frame3";
@@ -14,9 +16,15 @@ import { Frame5_B } from "./components/page/Frame5/Frame5_b";
 import { NavMenu } from "./components/common/sliderTab/NavMenu";
 import "./App.css";
 import { FuggyText } from "./components/common/Fuggy/app";
+import { MFrame10 } from "./components/mobile/Frame10/Frame10";
 
+// const isMobile = (rdd.isMobile = true);
 function App() {
-  return (
+  return isMobile ? (
+    <div className="flex h-full">
+      <MFrame10 />
+    </div>
+  ) : (
     <div className="containers">
       <Frame1 />
       <Frame2 />
@@ -30,7 +38,7 @@ function App() {
       <Frame8 />
       <Frame9 />
       <Frame10 />
-      {/* <Test /> */} {/* bottom bar */}
+      {/* <Test /> */}
       <div className="flex justify-center">
         <NavMenu />
       </div>

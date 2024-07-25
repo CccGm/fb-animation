@@ -30,10 +30,10 @@ const MumbaiClock = ({ bgColorClock, bgColorSec }) => {
   }, []);
 
   return (
-    <div
-      className="clock w-[350px] scale-50 -my-12"
-      style={{ backgroundColor: bgColorClock }}>
-      <div className="wrap">
+    <div className="w-fit">
+      <div
+        className="clockWrapMumbai"
+        style={{ backgroundColor: bgColorClock }}>
         <span className="hour"></span>
         <span className="minute"></span>
         <span className="second" style={{ backgroundColor: bgColorSec }}></span>

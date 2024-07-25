@@ -36,7 +36,7 @@ export const Frame10 = () => {
 
   return (
     <div className="w-full bg-black overflow-hidden snap-start ">
-      <div className="flex p-20 justify-between">
+      <div className="flex p-20 justify-between items-center">
         <div className="mt-8">
           <p
             style={{
@@ -96,49 +96,53 @@ export const Frame10 = () => {
             fuzzyBox
           </p>
         </div>
-        <div className="flex -mt-12">
-          <div className="text-center">
+        <div className="flex gap-20">
+          <div className="text-center flex flex-col items-center gap-10">
             <MumbaiClock bgColorClock={"#FF1F9F"} bgColorSec={"#00E94F"} />
-            <p
-              style={{
-                color: "#00E94F",
-                fontFamily: "Feeling",
-                fontSize: 28,
-              }}>
-              mumBai
-            </p>
-            <p
-              style={{
-                color: "#ffffff",
-                fontFamily: "Poppins",
-                fontSize: 20,
-                fontWeight: "lighter",
-                marginTop: 30,
-              }}>
-              Near Infinity Mall, Andheri <br /> West, Mumbai, India
-            </p>
+            <div>
+              <p
+                style={{
+                  color: "#00E94F",
+                  fontFamily: "Feeling",
+                  fontSize: 28,
+                }}>
+                mumBai
+              </p>
+              <p
+                style={{
+                  color: "#ffffff",
+                  fontFamily: "Poppins",
+                  fontSize: 20,
+                  fontWeight: "lighter",
+                  marginTop: 30,
+                }}>
+                Near Infinity Mall, Andheri <br /> West, Mumbai, India
+              </p>
+            </div>
           </div>
-          <div className="text-center">
+          <div className="text-center flex flex-col items-center gap-10">
             <UaeClock bgColorClock={"#00E94F"} bgColorSec={"#FF1F9F"} />
-            <p
-              style={{
-                color: "#FF1F9F",
-                fontFamily: "Feeling",
-                fontSize: 28,
-              }}>
-              uAe
-            </p>
-            <p
-              style={{
-                color: "#ffffff",
-                fontFamily: "Poppins",
-                fontSize: 20,
-                fontWeight: "lighter",
-                marginTop: 30,
-              }}>
-              Downtown Dubai,
-              <br /> United Arab Emirates
-            </p>
+            <div>
+              <p
+                style={{
+                  color: "#FF1F9F",
+                  fontFamily: "Feeling",
+                  fontSize: 28,
+                }}>
+                uAe
+              </p>
+              <p
+                style={{
+                  color: "#ffffff",
+                  fontFamily: "Poppins",
+                  fontSize: 20,
+                  fontWeight: "lighter",
+                  marginTop: 30,
+                }}>
+                Downtown Dubai,
+                <br /> United Arab Emirates
+              </p>
+            </div>
           </div>
         </div>
       </div>

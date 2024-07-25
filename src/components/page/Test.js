@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Test.css";
-import { NavMenu } from "../common/sliderTab/NavMenu";
+import MumbaiClock from "../common/MumbaiClock/MumbaiClock";
 
 export const Test = () => {
   const [secound, setSecound] = useState("00");
@@ -21,20 +21,8 @@ export const Test = () => {
   }, []);
 
   return (
-    <div className="bg-app-pink">
-      <div className="countdown flex gap-3 items-center text-3xl">
-        <div class="digit" id="hours">
-          00
-        </div>
-        <div class="colon">:</div>
-        <div class="digit" id="minutes">
-          00
-        </div>
-        <div class="colon">:</div>
-        <div class="digit move" id="seconds">
-          {secound}
-        </div>
-      </div>
+    <div className="bg-app-red">
+      <MumbaiClock bgColorClock={"#FF1F9F"} bgColorSec={"#00E94F"} />
     </div>
   );
 };
