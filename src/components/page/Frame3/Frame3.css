@@ -146,6 +146,28 @@
     }
 }
 
+.karfin-popcornMobile {
+    animation: karfin-right-bottom-Mob 3s forwards;
+}
+
+@keyframes karfin-right-bottom-Mob {
+    0% {
+
+        bottom: 20%;
+        right: 30%;
+    }
+
+    50% {
+        bottom: 0;
+        right: 0;
+    }
+
+    100% {
+        bottom: -111px;
+        right: 0;
+    }
+}
+
 .countdown-number {
     position: absolute;
     display: flex;

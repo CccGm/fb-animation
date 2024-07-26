@@ -41,7 +41,7 @@ export const MFrame8 = () => {
     brand11,
   ];
   return (
-    <div className="w-full bg-black h-screen snap-start overflow-hidden ">
+    <div className="w-full bg-black h-dvh snap-start overflow-hidden ">
       <div className="pt-10 pl-5">
         <p
           className=" underline"

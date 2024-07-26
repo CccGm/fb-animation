@@ -30,7 +30,7 @@ export const MFrame5_b = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black h-screen snap-start overflow-hidden">
+    <div className="w-full bg-black h-dvh snap-start overflow-hidden">
       <div className="flex flex-col gap-5" ref={animeRef}>
         <div
           className={`h-fit  ease-in-out duration-500 ${

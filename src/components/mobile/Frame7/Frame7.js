@@ -18,7 +18,7 @@ import img15 from "../../../assets/images/page7/Rectangle 147.png";
 
 export const MFrame7 = () => {
   return (
-    <div className="w-full bg-black h-screen py-8 snap-start overflow-hidden">
+    <div className="w-full bg-black h-dvh py-8 snap-start overflow-hidden">
       <div className="pl-5">
         <p
           className="underline"

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import popcorn from "../../../assets/images/page5/popcorn.png";
 import food from "../../../assets/images/page5/food.png";
 import murti from "../../../assets/images/page5/murti.png";
 
@@ -18,7 +17,7 @@ export const MFrame5_a = () => {
           }
         });
       },
-      { threshold: 0.01 }
+      { threshold: 0.65 }
     );
 
     const elementsToAnimate = animeRef.current;
@@ -29,8 +28,9 @@ export const MFrame5_a = () => {
       setAnimate(false);
     };
   }, []);
+
   return (
-    <div className="w-full bg-black h-screen snap-start overflow-hidden">
+    <div className="w-full bg-black h-dvh snap-start overflow-hidden">
       <div
         className={`h-[186px] w-full bg-app-red flex flex-col items-center justify-center ${
           animate ? "popcorn-container-hide" : ""
@@ -56,7 +56,7 @@ export const MFrame5_a = () => {
         </div>
       </div>
       {/* image screen 1 */}
-      <div className="flex flex-col gap-5" ref={animeRef}>
+      <div className="flex flex-col gap-5 " ref={animeRef}>
         <div
           className={`h-fit ease-in-out duration-500 ${
             animate ? "imageLeft" : ""

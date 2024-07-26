@@ -10,7 +10,7 @@ export const MFrame9 = () => {
   const [reachMe, setReachMe] = useState("");
 
   return (
-    <div className="w-full bg-app-purple h-screen overflow-scroll snap-start  px-5 py-6">
+    <div className="w-full bg-app-purple h-dvh overflow-scroll snap-start  px-5 py-6">
       <div className="grid grid-cols-2 h-fit">
         <div>
           <p style={{ color: "#C1FE00", fontSize: 12, fontFamily: "Feeling" }}>

@@ -7,7 +7,7 @@ import { InfiniteLooper } from "../../common/imageloopHorizantal/app";
 
 export const MFrame6 = () => {
   return (
-    <div className="w-full bg-black flex flex-col gap-2 h-screen snap-start overflow-hidden">
+    <div className="w-full bg-black flex flex-col gap-2 h-dvh snap-start overflow-hidden">
       <div className="flex flex-col bg-app-orange pl-5  py-10">
         <p
           className=" underline"

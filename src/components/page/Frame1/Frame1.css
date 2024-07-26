@@ -12,16 +12,37 @@
 
 /* fuggy */
 
-.fuggy-x-start {
-    transform: translateX(100%);
-}
-
-.fuggy-x-0 {
-    transform: translateX(0);
-}
-
 .fuggy-transform {
-    transition: transform 500ms ease-in-out;
+    transform: translateY(-100%);
+    /* transition: transform 500ms ease-in-out; */
+    animation: bounce1 2s 2s forwards;
+}
+
+@keyframes bounce1 {
+
+    20%,
+    50%,
+    70%,
+    100% {
+        transform: translateY(0);
+    }
+
+    0% {
+        transform: translateY(-80%);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+
+    }
 }
 
 /* image */
@@ -69,6 +90,12 @@
     animation: bounce2 5s ease-in-out;
 }
 
+.menu-transform {
+    transform: translateY(100%);
+    /* transition: transform 500ms ease-in-out; */
+    animation: bounce2 2s 2s forwards;
+}
+
 @keyframes bounce2 {
 
     20%,
@@ -99,6 +126,12 @@
 .boreSwitch {
     transform: translateX(100%);
     animation: boreSwitch 1s 1s forwards;
+}
+
+
+.boreSwitchMob {
+    transform: translateX(-100%);
+    animation: boreSwitch 1s 0.5s forwards;
 }
 
 @keyframes boreSwitch {
