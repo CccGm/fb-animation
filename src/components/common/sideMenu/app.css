@@ -7,7 +7,7 @@
      transition: 0.5s;
      display: flex;
      flex-direction: column;
-     justify-content: center;
+     padding-top: 30%;
      align-items: center;
      z-index: 1;
      gap: 20px;
@@ -45,38 +45,6 @@
      transition-delay: 0.4s;
  }
 
- .menu-icon {
-     position: fixed;
-     bottom: 20px;
-     left: 20px;
-     z-index: 2;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     width: 30px;
-     height: 21px;
-     cursor: pointer;
- }
-
- .menu-icon div {
-     width: 100%;
-     height: 3px;
-     background-color: #333;
-     transition: 0.4s;
- }
-
- .change .bar1 {
-     transform: rotate(-45deg) translate(-5px, 6px);
- }
-
- .change .bar2 {
-     opacity: 0;
- }
-
- .change .bar3 {
-     transform: rotate(45deg) translate(-5px, -6px);
- }
-
  .icon-sidemenu {
      transition: 1s;
      opacity: 0;
@@ -86,4 +54,12 @@
  .icon-sidemenu.show {
      opacity: 1;
      transform: translateX(0);
+ }
+
+ .meni-icon-1 {
+     top: 20%;
+ }
+
+ .meni-icon-2 {
+     transform: rotateX(20deg);
  }

@@ -83,15 +83,15 @@
 
 /* bounce */
 .bounce2 {
-    animation: bounce2 5s ease-in-out;
+    animation: bounce2 3s ease-in-out;
 }
 
 .bounce2.faed-out {
-    animation: bounce2 5s ease-in-out;
+    animation: bounce2 3s ease-in-out;
 }
 
 .menu-transform {
-    transform: translateY(100%);
+    transform: translateY(130%);
     /* transition: transform 500ms ease-in-out; */
     animation: bounce2 2s 2s forwards;
 }

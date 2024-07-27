@@ -130,7 +130,7 @@
 @keyframes cut-vertical {
     0% {
         height: 0;
-        background-color: blcak;
+        background-color: black;
     }
 
     100% {
@@ -281,7 +281,8 @@
 
 /* left -> */
 
-.hover-effect-yellow-left .text {
+.hover-effect-yellow-left .text,
+.hover-effect-yellow-left .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -289,7 +290,7 @@
     align-items: center;
     background-color: #FFA616;
     opacity: 1;
-    transition: background-color 2s;
+    transition: background-color 3s;
     animation: hover-effect-yellow-left 2s;
 }
 
@@ -303,7 +304,8 @@
     animation: hover-effect-yellow-left-back 1s forwards;
 }
 
-.hover-effect-blue-left .text {
+.hover-effect-blue-left .text,
+.hover-effect-blue-left .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -375,7 +377,8 @@
 
 /* right <- */
 
-.hover-effect-yellow-right .text {
+.hover-effect-yellow-right .text,
+.hover-effect-yellow-right .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -383,7 +386,7 @@
     align-items: center;
     background-color: #FFA616;
     opacity: 1;
-    transition: background-color 2s;
+    transition: background-color 3s;
     animation: hover-effect-yellow-right 2s;
 }
 
@@ -397,7 +400,8 @@
     animation: hover-effect-yellow-right-back 1s forwards;
 }
 
-.hover-effect-blue-right .text {
+.hover-effect-blue-right .text,
+.hover-effect-blue-right .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -469,7 +473,8 @@
 
 /* top -^ */
 
-.hover-effect-yellow-top .text {
+.hover-effect-yellow-top .text,
+.hover-effect-yellow-top .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -477,7 +482,7 @@
     align-items: center;
     background-color: #FFA616;
     opacity: 1;
-    transition: background-color 2s;
+    transition: background-color 3s;
     animation: hover-effect-yellow-top 2s;
 }
 
@@ -491,7 +496,8 @@
     animation: hover-effect-yellow-top-back 1s forwards;
 }
 
-.hover-effect-blue-top .text {
+.hover-effect-blue-top .text,
+.hover-effect-blue-top .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -563,7 +569,8 @@
 
 /* bottom -v */
 
-.hover-effect-yellow-bottom .text {
+.hover-effect-yellow-bottom .text,
+.hover-effect-yellow-bottom .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -571,7 +578,7 @@
     align-items: center;
     background-color: #FFA616;
     opacity: 1;
-    transition: background-color 2s;
+    transition: background-color 3s;
     animation: hover-effect-yellow-bottom 2s;
 }
 
@@ -585,7 +592,8 @@
     animation: hover-effect-yellow-bottom-back 1s forwards;
 }
 
-.hover-effect-blue-bottom .text {
+.hover-effect-blue-bottom .text,
+.hover-effect-blue-bottom .mobtext {
     display: flex;
     height: 100%;
     width: 100%;
@@ -593,7 +601,7 @@
     align-items: center;
     background-color: #0093FF;
     opacity: 1;
-    transition: background-color 2s;
+    transition: background-color 3s;
     animation: hover-effect-blue-bottom 2s;
 }
 

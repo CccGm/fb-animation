@@ -3,14 +3,14 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-  width: 200,
-  height: 80,
+const MaterialUISwitch = styled(Switch)(({ theme, Mob }) => ({
+  width: Mob ? 130 : 200,
+  height: Mob ? 56 : 80,
   padding: 1,
   "& .MuiSwitch-switchBase": {
     margin: 1,
-    padding: 7,
-    transform: "translateX(120px)",
+    padding: Mob ? 5 : 7,
+    transform: `translateX(${Mob ? "74px" : "120px"})`,
     // headphone
     "&.Mui-checked": {
       color: "#fff",
@@ -28,8 +28,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-thumb": {
     backgroundColor: theme.palette.mode === "dark" ? "#ffffff" : "#ffffff",
-    width: 64,
-    height: 64,
+    width: Mob ? 43 : 64,
+    height: Mob ? 43 : 64,
     "&::before": {
       content: "''",
       position: "absolute",
@@ -52,10 +52,10 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedSwitches({ checked, change }) {
+export default function CustomizedSwitches({ checked, change, Mob }) {
   return (
     <FormGroup>
-      <MaterialUISwitch checked={!checked} onChange={change} />
+      <MaterialUISwitch checked={!checked} onChange={change} Mob={Mob} />
     </FormGroup>
   );
 }

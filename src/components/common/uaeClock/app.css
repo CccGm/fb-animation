@@ -5,6 +5,7 @@
     height: 170px;
     border-radius: 100%;
     border: 3px solid white;
+    rotate: 180deg;
 }
 
 .minu,

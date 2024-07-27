@@ -78,6 +78,7 @@ export const MFrame1 = () => {
         </div>
       </div>
 
+      {/* text */}
       <div className="pl-5 -mt-5">
         <p
           className={`translate-y-start transition-transform1 ${
@@ -94,6 +95,9 @@ export const MFrame1 = () => {
           <span style={{ color: "#ED1D24" }}>.</span>
         </p>
         <p
+          className={`translate-y-start transition-transform1 ${
+            animate ? "translate-y-0" : ""
+          }`}
           style={{
             color: "#ED1D24",
             fontFamily: "Feeling",
@@ -116,9 +120,11 @@ export const MFrame1 = () => {
         </p>
       </div>
 
+      {/* switch */}
       <div className="flex justify-start w-full pl-4 mt-3 boreSwitchMob z-50 ">
         <Switch bore={bore} setBore={setBore} />
       </div>
+      {/* karfin */}
       <div
         className={`absolute bottom-5 right-2 -z-10  ${
           animate ? "bounce2" : ""
@@ -126,6 +132,7 @@ export const MFrame1 = () => {
         <img src={cartoon} alt="popcorn" style={{ height: 260 }} />
       </div>
 
+      {/* menu */}
       <div
         className={`flex justify-center bg-app-offBlack items-center rounded-full  absolute bottom-5 left-3 menu-transform`}
         style={{ width: 54, height: 54, zIndex: 10 }}
@@ -139,7 +146,21 @@ export const MFrame1 = () => {
             height: isOpenMenu ? 54 : 40,
             backgroundColor: isOpenMenu ? "white" : "#ED1D24",
           }}>
-          <Menusvg />
+          <div className="relative flex justify-center items-center">
+            <div
+              className={`${
+                isOpenMenu ? "rotate-45 scale-150" : "rotate-0 scale-100"
+              } absolute origin-center transition-all duration-700`}>
+              <Menusvg />
+            </div>
+
+            <div
+              className={`${
+                isOpenMenu ? "-rotate-45 scale-150" : "rotate-0 scale-100"
+              } absolute origin-center transition-all duration-700`}>
+              <Menusvg />
+            </div>
+          </div>
         </div>
       </div>
     </div>

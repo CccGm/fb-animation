@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./app.css";
 import { FacebookSvg } from "../../../assets/svg/FacebookSvg";
 import { InstaSvg } from "../../../assets/svg/InstaSvg";
