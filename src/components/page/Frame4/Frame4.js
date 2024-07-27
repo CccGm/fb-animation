@@ -49,7 +49,7 @@ export const Frame4 = () => {
             setStartHover(false);
             setTextAnime(false);
             // setSliderAnimation("");
-          }, 500);
+          }, 100);
         }
       });
     });
