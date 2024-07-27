@@ -21,8 +21,6 @@ const MumbaiClock = ({ bgColorClock, bgColorSec }) => {
       document.querySelector(".second").style.transform = `rotate(
         ${second}deg
       )`;
-
-      console.log(hour, minute);
     };
 
     clock();

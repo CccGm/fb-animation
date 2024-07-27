@@ -41,7 +41,7 @@ export const MFrame7 = () => {
       <div className="flex justify-end w-full">
         <div className="rotate-180 mb-3 w-2/3 h-fit">
           <InfiniteLooper speed="10" direction="right">
-            <div className="flex gap-3 contentBlock--one">
+            <div className="flex gap-2 contentBlock--three">
               <div className="h-3 border border-app-yellow" />
               <div className="h-3 border border-app-yellow" />
               <div className="h-4 border border-app-yellow" />

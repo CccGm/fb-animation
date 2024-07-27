@@ -68,28 +68,8 @@ export const Frame8 = () => {
   ];
 
   return (
-    <div className="w-full bg-black h-screen snap-start overflow-hidden">
-      {/* <div className="flex justify-end h-fit">
-        <div
-          style={{
-            width: 200,
-            height: 142,
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}>
-          <p
-            className=" underline"
-            style={{
-              color: "#FF1F9F",
-              fontFamily: "Feeling",
-              fontSize: 24,
-            }}>
-            FuzzyBox
-          </p>
-        </div>
-      </div> */}
-      <div className="rotate-[4deg] overflow-hidden" ref={animeRef}>
+    <div className="w-full bg-black h-screen snap-start overflow-hidden relative">
+      <div className="rotate-[4deg] overflow-hidden mt-24" ref={animeRef}>
         <InfiniteLooper speed="20" direction="right">
           <div className="flex bg-app-blue p-5 contentBlock--two gap-5 h-[300px]">
             {Blue?.map((image, index) => {
@@ -143,27 +123,25 @@ export const Frame8 = () => {
           </div>
         </InfiniteLooper>
       </div>
-      <div className="grid grid-cols-2 mt-10">
-        <div />
-        <div>
-          <p
-            className=" underline"
-            style={{
-              color: "#0093FF",
-              fontFamily: "Feeling",
-              fontSize: 24,
-            }}>
-            FuzzyBox
-          </p>
-          <p
-            style={{
-              color: "#ffffff",
-              fontFamily: "Geometric",
-              fontSize: 128,
-            }}>
-            BRANDS
-          </p>
-        </div>
+
+      <div className="absolute bottom-16 right-[25%]">
+        <p
+          className=" underline"
+          style={{
+            color: "#0093FF",
+            fontFamily: "Feeling",
+            fontSize: 24,
+          }}>
+          FuzzyBox
+        </p>
+        <p
+          style={{
+            color: "#ffffff",
+            fontFamily: "Geometric",
+            fontSize: 128,
+          }}>
+          BRANDS
+        </p>
       </div>
     </div>
   );

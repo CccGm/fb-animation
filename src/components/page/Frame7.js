@@ -68,7 +68,7 @@ export const Frame7 = () => {
         </div>
       </InfiniteLooper>
       <div
-        className="flex justify-between pl-40 pr-56 items-end gap-5"
+        className="flex justify-between pl-40 pr-32 items-end gap-5"
         ref={animeRef}>
         <div>
           <p
@@ -93,15 +93,24 @@ export const Frame7 = () => {
           <InfiniteLooper speed="10" direction="right">
             <div className="flex gap-3 contentBlock--one">
               <div className="h-3 border border-app-yellow" />
+              <div className="h-3 border border-app-yellow" />
+              <div className="h-4 border border-app-yellow" />
               <div className="h-4 border border-app-yellow" />
               <div className="h-5 border border-app-yellow" />
+              <div className="h-5 border border-app-yellow" />
+              <div className="h-6 border border-app-yellow" />
               <div className="h-6 border border-app-yellow" />
               <div className="h-7 border border-app-yellow" />
               <div className="h-8 border border-app-yellow" />
+              <div className="h-8 border border-app-yellow" />
               <div className="h-7 border border-app-yellow" />
               <div className="h-6 border border-app-yellow" />
+              <div className="h-6 border border-app-yellow" />
+              <div className="h-5 border border-app-yellow" />
               <div className="h-5 border border-app-yellow" />
               <div className="h-4 border border-app-yellow" />
+              <div className="h-4 border border-app-yellow" />
+              <div className="h-3 border border-app-yellow" />
               <div className="h-3 border border-app-yellow" />
             </div>
           </InfiniteLooper>
